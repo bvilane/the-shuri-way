@@ -16,6 +16,20 @@ function PartnersSection() {
       name: 'Bush Villa Collection',
       logo: '/partners/bush-villa.png',
       description: 'Authentic safari accommodations',
+      subBrands: [
+        {
+          name: 'Bush Willow',
+          logo: '/partners/bush-willow.webp',
+        },
+        {
+          name: 'Ekhaya',
+          logo: '/partners/ekhaya.webp',
+        },
+        {
+          name: 'Marula',
+          logo: '/partners/marula.webp',
+        },
+      ],
     },
     {
       name: 'Kelora Bush Camp',
@@ -87,6 +101,24 @@ function PartnersSection() {
               <p className="text-muted-foreground text-sm lg:text-base">
                 {partner.description}
               </p>
+
+              {/* Sub-brands for Bush Villa Collection */}
+              {partner.subBrands && (
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
+                  {partner.subBrands.map((sub, subIdx) => (
+                    <div key={subIdx} className="flex flex-col items-center">
+                      <img
+                        src={sub.logo}
+                        alt={sub.name + ' logo'}
+                        className="border-primary/10 h-10 w-10 rounded-md border bg-white object-contain p-1 shadow-sm"
+                      />
+                      <span className="text-muted-foreground mt-1 text-xs font-medium">
+                        {sub.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
