@@ -1,10 +1,9 @@
-import { memo, useState, useEffect } from 'react';
+import { memo, useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Play, Users, Building, Globe, Star } from 'lucide-react';
 import heroBg from '@/assets/hero-safari-bg.jpg';
 
 function HeroSection() {
-  const [emailInput, setEmailInput] = useState('');
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const testimonials = [
@@ -20,9 +19,12 @@ function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleWaitlist = () => {
-    console.log('Waitlist signup:', emailInput);
-  };
+  const scrollToWaitlist = useCallback(() => {
+    const element = document.getElementById('cta');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
 
   return (
     <section
@@ -50,44 +52,35 @@ function HeroSection() {
           <h1 className="font-safari mb-5 text-4xl leading-tight font-bold text-white md:text-5xl lg:text-6xl">
             Safari, Simplified.
             <br />
-            <span className="text-accent">For Everyone.</span>
+            <span className="text-accent">Supercharged by AI.</span>
           </h1>
 
           <p className="mx-auto mb-6 max-w-3xl text-lg font-medium text-white/90 md:text-xl">
-            The all-in-one platform for lodges, operators, travelers, and
-            service providers.
+            The all-in-one platform for travelers, lodges, tour operators — and
+            the intelligent system behind them.
           </p>
 
           <p className="mx-auto mb-10 max-w-3xl text-base leading-relaxed text-white/80 md:text-lg">
-            From booking the wildest journeys to managing the smoothest lodge
-            operations — Shuri Way is how the future of safari connects.
+            Meet Shuri AI — your smart co-pilot for planning, booking, and
+            managing everything safari.
           </p>
 
-          <div className="mb-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <div className="flex w-full max-w-lg flex-col items-center gap-3 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={emailInput}
-                onChange={(e) => setEmailInput(e.target.value)}
-                className="text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-accent/20 flex-1 rounded-xl border border-white/20 bg-white/95 px-5 py-3 text-base backdrop-blur-sm transition-all duration-300 outline-none focus:ring-2"
-              />
-              <Button
-                variant="default"
-                size="lg"
-                onClick={handleWaitlist}
-                className="from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-primary/25 hover:shadow-primary/30 group h-full rounded-xl bg-gradient-to-r px-6 py-3 text-base font-semibold whitespace-nowrap shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-              >
-                <span className="flex items-center gap-2">
-                  Join the Waitlist
-                  <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 md:h-5 md:w-5" />
-                </span>
-              </Button>
-            </div>
+          <div className="mb-8 flex items-center justify-center">
+            <Button
+              variant="default"
+              size="lg"
+              onClick={scrollToWaitlist}
+              className="from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-primary/25 hover:shadow-primary/30 group h-full rounded-xl bg-gradient-to-r px-6 py-3 text-base font-semibold whitespace-nowrap shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <span className="flex items-center gap-2">
+                Join the Waitlist
+                <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 md:h-5 md:w-5" />
+              </span>
+            </Button>
           </div>
 
           <p className="mb-10 text-sm text-white/70 md:text-base">
-            Be first to try the platform that's reimagining African travel.
+            Experience the first AI-powered platform for the safari ecosystem.
           </p>
 
           <div className="mb-16 flex items-center justify-center">

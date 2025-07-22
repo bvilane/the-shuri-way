@@ -47,8 +47,9 @@ function PromiseSection() {
             <span className="text-primary">Total safari harmony.</span>
           </h2>
           <p className="text-muted-foreground mx-auto max-w-4xl text-lg leading-relaxed md:text-xl">
-            Shuri Way brings the entire safari experience into one ecosystem —
-            designed with and for the people who make it happen.
+            Shuri Way brings every part of the safari industry into one
+            ecosystem — powered by Shuri AI to help you plan faster, sell
+            smarter, and personalize like never before
           </p>
         </div>
 

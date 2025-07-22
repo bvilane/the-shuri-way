@@ -1,21 +1,6 @@
 import { memo } from 'react';
 import { Button } from '@/components/ui/button';
-import {
-  Building,
-  Users,
-  Globe,
-  Truck,
-  ArrowRight,
-  Calendar,
-  DollarSign,
-  UserCheck,
-  Map,
-  CreditCard,
-  Shield,
-  Search,
-  Star,
-  CheckCircle,
-} from 'lucide-react';
+import { Building, Users, Globe, Truck, ArrowRight } from 'lucide-react';
 
 function AudienceSection() {
   const audiences = [
@@ -27,6 +12,8 @@ function AudienceSection() {
       subtitle: 'FOR LODGES',
       description:
         'Shuri Way replaces outdated booking tools with a seamless, beautiful dashboard that helps your lodge run smarter — from guest CRM to upselling experiences.',
+      aiSubcopy:
+        'With Shuri AI, you’ll get smart pricing suggestions, guest personalization tips, and automated availability insights — all from your dashboard.',
       ctaButtons: [
         { text: 'Manage Availability' },
         { text: 'Sell Directly' },
@@ -44,6 +31,8 @@ function AudienceSection() {
       subtitle: 'FOR TOUR OPERATORS',
       description:
         'Drag, drop, and quote beautiful custom trips with real-time lodge availability and integrated transport options. No more spreadsheets. No more guesswork.',
+      aiSubcopy:
+        'Let Shuri AI recommend the perfect lodges, auto-generate multi-stop itineraries, and draft quotes in minutes based on your client’s needs.',
       ctaButtons: [
         { text: 'Multi-stop Itinerary Builder' },
         { text: 'Instant Pricing Tools' },
@@ -61,6 +50,8 @@ function AudienceSection() {
       subtitle: 'FOR TRAVELERS',
       description:
         "Choose from curated experiences or build your own adventure. Shuri Way lets you connect directly with Africa's most iconic lodges and guides.",
+      aiSubcopy:
+        "Want help planning? Shuri AI can build your dream safari based on your budget, dates, and vibe. Just tell it what you're looking for.",
       ctaButtons: [
         { text: 'Discover Experiences' },
         { text: 'Compare Lodges' },
@@ -78,6 +69,8 @@ function AudienceSection() {
       subtitle: 'FOR SERVICE PROVIDERS',
       description:
         'Shuri Way helps shuttle companies, guides, and specialists get listed, discovered, and booked as part of full safari experiences.',
+      aiSubcopy:
+        'From routing to package creation, Shuri AI helps providers streamline operations and get discovered by the right people, faster.',
       ctaButtons: [
         { text: 'Register Your Business' },
         { text: 'Be Part of Trips' },
@@ -129,8 +122,13 @@ function AudienceSection() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-muted-foreground mb-6 text-base leading-relaxed lg:text-lg">
+                <p className="text-muted-foreground mb-3 text-base leading-relaxed lg:text-lg">
                   {audience.description}
+                </p>
+
+                {/* AI Subcopy */}
+                <p className="text-primary mb-6 text-sm leading-relaxed font-semibold lg:text-base">
+                  {audience.aiSubcopy}
                 </p>
 
                 {/* Micro CTAs */}

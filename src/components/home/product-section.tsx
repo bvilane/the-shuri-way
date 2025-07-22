@@ -10,9 +10,7 @@ function ProductSection() {
         {/* Header */}
         <div className="mb-16 text-center">
           <h2 className="font-safari text-foreground mb-6 text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl">
-            A sneak peek into
-            <br />
-            <span className="text-primary">how it all works.</span>
+            What makes Shuri Way smarter?
           </h2>
           <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg leading-relaxed md:text-xl">
             See how Shuri Way connects the dots — from lodge calendars to client
@@ -28,6 +26,22 @@ function ProductSection() {
             <PlayCircle className="mr-2" size={20} />
             Watch Demo (Coming Soon)
           </Button>
+        </div>
+
+        {/* Feature Card: Meet Shuri AI */}
+        <div className="mx-auto mb-16 max-w-2xl">
+          <div className="group from-primary/10 to-accent/10 border-primary/20 rounded-2xl border bg-gradient-to-br p-6 text-center shadow-lg transition-all duration-300 hover:shadow-xl">
+            <div className="mb-4 flex items-center justify-center text-4xl">
+              🧠
+            </div>
+            <h3 className="font-safari text-foreground mb-2 text-xl font-bold lg:text-2xl">
+              Meet Shuri AI
+            </h3>
+            <p className="text-muted-foreground text-base lg:text-lg">
+              Safari's first intelligent assistant — helping everyone plan,
+              sell, and book smarter.
+            </p>
+          </div>
         </div>
 
         {/* Product Showcase */}

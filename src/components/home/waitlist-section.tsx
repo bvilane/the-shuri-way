@@ -1,4 +1,7 @@
+import { toast } from 'sonner';
 import { memo, useState } from 'react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -8,10 +11,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { ArrowRight, CheckCircle } from 'lucide-react';
-import { toast } from 'sonner';
 
-const WaitlistSection = () => {
+function WaitlistSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -100,14 +101,12 @@ const WaitlistSection = () => {
         <div className="mx-auto max-w-2xl text-center">
           {/* Header */}
           <h2 className="font-safari text-foreground mb-6 text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl">
-            Get early access.
-            <br />
-            <span className="text-primary">Be part of the revolution.</span>
+            The future of safari runs on intelligence.
           </h2>
 
           <p className="text-muted-foreground mb-12 text-lg leading-relaxed md:text-xl">
-            Join thousands of safari professionals, travelers, and industry
-            leaders who are shaping the future of African safari together.
+            Be the first to use Shuri AI — our integrated assistant that helps
+            travelers, operators, and lodges make smarter decisions, faster.
           </p>
 
           {/* Form Container */}
@@ -212,6 +211,6 @@ const WaitlistSection = () => {
       </div>
     </section>
   );
-};
+}
 
 export default memo(WaitlistSection);

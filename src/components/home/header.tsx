@@ -36,7 +36,7 @@ function Header() {
       className={cn(
         'fixed top-0 right-0 left-0 z-50 transition-all duration-500 ease-out',
         isScrolled
-          ? 'bg-background/95 border-border/50 shadow-primary/5 border-b shadow-lg backdrop-blur-xl'
+          ? 'shadow-primary/5 bg-black/10 shadow-lg backdrop-blur-xl'
           : 'bg-black/20 backdrop-blur-sm',
       )}
     >

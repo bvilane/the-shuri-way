@@ -31,6 +31,28 @@ function BenefitsSection() {
       hoverBorder: 'hover:border-accent/40',
     },
     {
+      emoji: '🧠',
+      title:
+        'Powered by Shuri AI — intelligent trip suggestions, pricing support, and guest personalization',
+      gradient: 'from-primary/10 to-accent/10',
+      borderColor: 'border-primary/20',
+      hoverBorder: 'hover:border-primary/40',
+    },
+    {
+      emoji: '🕒',
+      title: 'Saves time across the chain',
+      gradient: 'from-accent/10 to-primary/10',
+      borderColor: 'border-accent/20',
+      hoverBorder: 'hover:border-accent/40',
+    },
+    {
+      emoji: '📈',
+      title: 'Increases booking conversion and revenue',
+      gradient: 'from-primary/10 to-accent/10',
+      borderColor: 'border-primary/20',
+      hoverBorder: 'hover:border-primary/40',
+    },
+    {
       emoji: '🚀',
       title: "Launching soon — you don't want to miss it",
       gradient: 'from-primary/10 to-primary/5',
