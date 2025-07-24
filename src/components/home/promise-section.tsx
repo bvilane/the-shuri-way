@@ -96,21 +96,6 @@ function PromiseSection() {
             </span>
           </div>
         </div>
-
-        <div className="mt-12 flex justify-center space-x-8 opacity-60">
-          {['🦁', '🐘', '🦒', '🦓', '🦏'].map((animal, index) => (
-            <div
-              key={index}
-              className="cursor-pointer text-3xl transition-all duration-300 hover:scale-125 hover:opacity-100"
-              style={{
-                filter: 'sepia(20%) saturate(120%) hue-rotate(15deg)',
-                animationDelay: `${index * 200}ms`,
-              }}
-            >
-              {animal}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

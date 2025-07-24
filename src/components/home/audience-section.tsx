@@ -190,22 +190,6 @@ function AudienceSection() {
             </span>
           </Button>
         </div>
-
-        {/* Decorative elements */}
-        <div className="mt-12 flex justify-center space-x-6 opacity-50">
-          {['🏛️', '🧭', '🌍', '🚐'].map((icon, index) => (
-            <div
-              key={index}
-              className="cursor-pointer text-2xl transition-all duration-300 hover:scale-125 hover:opacity-100"
-              style={{
-                filter: 'sepia(15%) saturate(110%) hue-rotate(10deg)',
-                animationDelay: `${index * 150}ms`,
-              }}
-            >
-              {icon}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
