@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite dev"
+    "dev": "vite dev",
+    "deploy": "sst deploy --stage prod"
   },
   "packageManager": "pnpm@10.13.1",
   "dependencies": {
