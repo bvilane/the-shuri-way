@@ -45,6 +45,15 @@
   --font-dm-sans: 'DM Sans', sans-serif;
   --font-lato: 'Lato', sans-serif;
   /* Font Theme */
+
+  /* Color */
+  --color-earth-gold: #daa520;
+  --color-savanna-green: #6a7f49;
+  --color-dusk-brown: #4a3b2d;
+  --color-sunset-orange: #e29551;
+  --color-deep-charcoal: #2b2b2b;
+  --color-sand-beige: #d8c3a5;
+  /* Color */
 }
 
 :root {
