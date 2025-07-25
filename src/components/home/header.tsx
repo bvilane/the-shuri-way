@@ -36,8 +36,8 @@ function Header() {
       className={cn(
         'fixed top-0 right-0 left-0 z-50 transition-all duration-500 ease-out',
         isScrolled
-          ? 'border-b border-gray-200/30 bg-white/95 shadow-lg shadow-black/5 backdrop-blur-xl'
-          : 'bg-white/10 backdrop-blur-md',
+          ? 'border-b border-gray-200/30 bg-white/95 shadow-lg shadow-black/5'
+          : '',
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,9 +103,7 @@ function Header() {
               onClick={() => scrollToSection('cta')}
               className={cn(
                 'group relative overflow-hidden rounded-xl px-6 py-3 text-sm font-bold transition-all duration-300 hover:scale-105',
-                isScrolled
-                  ? 'bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90 text-white shadow-lg hover:shadow-xl hover:shadow-[#1B4332]/25'
-                  : 'border border-white/20 bg-white/15 text-white backdrop-blur-sm hover:bg-white/20',
+                'bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90 text-white shadow-lg hover:shadow-xl hover:shadow-[#1B4332]/25',
               )}
             >
               <div className="absolute inset-0 -translate-x-full -skew-x-12 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 group-hover:translate-x-full"></div>
