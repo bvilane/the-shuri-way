@@ -46,89 +46,92 @@
   --font-lato: 'Lato', sans-serif;
   /* Font Theme */
 
-  /* Color */
-  --color-earth-gold: #daa520;
-  --color-savanna-green: #6a7f49;
-  --color-dusk-brown: #4a3b2d;
-  --color-sunset-orange: #e29551;
-  --color-deep-charcoal: #2b2b2b;
-  --color-sand-beige: #d8c3a5;
-  /* Color */
+  /* Logo Color Palette */
+  --color-dark-green: #1b4332;
+  --color-mint-green: #a7ffd9;
+  --color-warm-beige: #dab785;
+  /* Logo Color Palette */
 }
 
 :root {
   --radius: 0.625rem;
-  /* Earth Tone Color Palette - Light Theme */
-  --background: oklch(0.97 0.02 85); /* Sandy beige background */
-  --foreground: oklch(0.25 0.015 85); /* Charcoal text */
-  --card: oklch(0.98 0.015 85); /* Light sandy card */
-  --card-foreground: oklch(0.25 0.015 85); /* Charcoal on cards */
-  --popover: oklch(0.98 0.015 85); /* Light sandy popover */
-  --popover-foreground: oklch(0.25 0.015 85); /* Charcoal popover text */
-  --primary: oklch(0.45 0.12 145); /* Deep forest green */
-  --primary-foreground: oklch(0.97 0.02 85); /* Sandy beige on primary */
-  --secondary: oklch(0.85 0.04 75); /* Warm beige */
-  --secondary-foreground: oklch(0.35 0.08 145); /* Darker green text */
-  --muted: oklch(0.92 0.025 80); /* Muted sandy */
-  --muted-foreground: oklch(0.45 0.02 85); /* Muted charcoal */
-  --accent: oklch(0.72 0.15 85); /* Gold accent */
-  --accent-foreground: oklch(0.25 0.015 85); /* Charcoal on gold */
-  --destructive: oklch(0.65 0.25 25); /* Warm red */
-  --border: oklch(0.88 0.03 80); /* Soft border */
-  --input: oklch(0.94 0.02 82); /* Input background */
-  --ring: oklch(0.55 0.12 145); /* Green focus ring */
-  --chart-1: oklch(0.55 0.12 145); /* Deep green */
-  --chart-2: oklch(0.72 0.15 85); /* Gold */
-  --chart-3: oklch(0.65 0.08 135); /* Sage green */
-  --chart-4: oklch(0.78 0.12 75); /* Warm tan */
-  --chart-5: oklch(0.42 0.02 85); /* Charcoal */
-  --sidebar: oklch(0.95 0.025 82); /* Light sidebar */
-  --sidebar-foreground: oklch(0.3 0.02 85); /* Sidebar text */
-  --sidebar-primary: oklch(0.5 0.12 145); /* Sidebar primary */
-  --sidebar-primary-foreground: oklch(0.97 0.02 85); /* Sidebar primary text */
-  --sidebar-accent: oklch(0.88 0.06 80); /* Sidebar accent */
-  --sidebar-accent-foreground: oklch(0.35 0.08 145); /* Sidebar accent text */
-  --sidebar-border: oklch(0.88 0.03 80); /* Sidebar border */
-  --sidebar-ring: oklch(0.55 0.12 145); /* Sidebar ring */
+  /* Light Theme - Based on Logo Colors */
+  --background: #ffffff; /* Pure white background */
+  --foreground: #1b4332; /* Dark green text */
+  --card: #a7ffd9; /* Light mint green cards */
+  --card-foreground: #1b4332; /* Dark green on cards */
+  --popover: #ffffff; /* White popover */
+  --popover-foreground: #1b4332; /* Dark green popover text */
+  --primary: #1b4332; /* Dark green primary */
+  --primary-foreground: #a7ffd9; /* Light mint on primary */
+  --secondary: #dab785; /* Warm beige secondary */
+  --secondary-foreground: #1b4332; /* Dark green text on secondary */
+  --muted: rgba(167, 255, 217, 0.3); /* Muted mint green */
+  --muted-foreground: #1b4332; /* Dark green muted text */
+  --accent: #dab785; /* Warm beige accent */
+  --accent-foreground: #1b4332; /* Dark green on accent */
+  --destructive: #1b4332; /* Dark green for destructive */
+  --border: rgba(167, 255, 217, 0.5); /* Light mint border */
+  --input: rgba(167, 255, 217, 0.2); /* Very light mint input */
+  --ring: #a7ffd9; /* Mint green focus ring */
+  --chart-1: #1b4332; /* Dark green */
+  --chart-2: #a7ffd9; /* Mint green */
+  --chart-3: #dab785; /* Warm beige */
+  --chart-4: rgba(27, 67, 50, 0.7); /* Semi-transparent dark green */
+  --chart-5: rgba(167, 255, 217, 0.7); /* Semi-transparent mint */
+  --sidebar: rgba(167, 255, 217, 0.1); /* Very light mint sidebar */
+  --sidebar-foreground: #1b4332; /* Dark green sidebar text */
+  --sidebar-primary: #1b4332; /* Dark green sidebar primary */
+  --sidebar-primary-foreground: #a7ffd9; /* Mint sidebar primary text */
+  --sidebar-accent: #dab785; /* Beige sidebar accent */
+  --sidebar-accent-foreground: #1b4332; /* Dark green sidebar accent text */
+  --sidebar-border: rgba(167, 255, 217, 0.3); /* Light mint sidebar border */
+  --sidebar-ring: #a7ffd9; /* Mint sidebar ring */
 }
 
 .dark {
-  /* Earth Tone Color Palette - Dark Theme */
-  --background: oklch(0.15 0.015 85); /* Dark charcoal background */
-  --foreground: oklch(0.88 0.04 75); /* Warm beige text */
-  --card: oklch(0.2 0.02 85); /* Dark charcoal card */
-  --card-foreground: oklch(0.88 0.04 75); /* Warm beige card text */
-  --popover: oklch(0.2 0.02 85); /* Dark popover */
-  --popover-foreground: oklch(0.88 0.04 75); /* Warm popover text */
-  --primary: oklch(0.62 0.15 145); /* Brighter green for dark mode */
-  --primary-foreground: oklch(0.15 0.015 85); /* Dark text on green */
-  --secondary: oklch(0.3 0.03 80); /* Dark warm beige */
-  --secondary-foreground: oklch(0.85 0.06 75); /* Light beige text */
-  --muted: oklch(0.25 0.02 85); /* Muted dark */
-  --muted-foreground: oklch(0.65 0.03 80); /* Muted light */
-  --accent: oklch(0.78 0.18 85); /* Bright gold accent */
-  --accent-foreground: oklch(0.15 0.015 85); /* Dark on gold */
-  --destructive: oklch(0.7 0.25 25); /* Bright warm red */
-  --border: oklch(0.3 0.02 85); /* Dark border */
-  --input: oklch(0.22 0.02 85); /* Dark input */
-  --ring: oklch(0.65 0.15 145); /* Bright green ring */
-  --chart-1: oklch(0.62 0.15 145); /* Bright green */
-  --chart-2: oklch(0.78 0.18 85); /* Bright gold */
-  --chart-3: oklch(0.72 0.12 135); /* Light sage */
-  --chart-4: oklch(0.68 0.08 75); /* Light tan */
-  --chart-5: oklch(0.85 0.04 80); /* Light charcoal */
-  --sidebar: oklch(0.18 0.02 85); /* Dark sidebar */
-  --sidebar-foreground: oklch(0.85 0.04 75); /* Sidebar text */
-  --sidebar-primary: oklch(0.65 0.15 145); /* Bright sidebar primary */
-  --sidebar-primary-foreground: oklch(
-    0.15 0.015 85
-  ); /* Dark sidebar primary text */
-  --sidebar-accent: oklch(0.28 0.03 80); /* Dark sidebar accent */
-  --sidebar-accent-foreground: oklch(
-    0.82 0.06 75
-  ); /* Light sidebar accent text */
-  --sidebar-border: oklch(0.3 0.02 85); /* Dark sidebar border */
-  --sidebar-ring: oklch(0.65 0.15 145); /* Bright sidebar ring */
+  /* Dark Theme - Based on Logo Colors */
+  --background: #1b4332; /* Dark green background */
+  --foreground: #a7ffd9; /* Light mint text */
+  --card: rgba(27, 67, 50, 0.8); /* Darker green card */
+  --card-foreground: #a7ffd9; /* Mint card text */
+  --popover: #1b4332; /* Dark green popover */
+  --popover-foreground: #a7ffd9; /* Mint popover text */
+  --primary: #a7ffd9; /* Mint green primary */
+  --primary-foreground: #1b4332; /* Dark green on primary */
+  --secondary: #dab785; /* Warm beige secondary */
+  --secondary-foreground: #1b4332; /* Dark green text on secondary */
+  --muted: rgba(27, 67, 50, 0.6); /* Muted dark green */
+  --muted-foreground: rgba(167, 255, 217, 0.8); /* Muted mint */
+  --accent: #dab785; /* Warm beige accent */
+  --accent-foreground: #1b4332; /* Dark green on accent */
+  --destructive: #a7ffd9; /* Mint for destructive in dark mode */
+  --border: rgba(167, 255, 217, 0.2); /* Dark mint border */
+  --input: rgba(27, 67, 50, 0.9); /* Very dark green input */
+  --ring: #a7ffd9; /* Mint focus ring */
+  --chart-1: #a7ffd9; /* Mint green */
+  --chart-2: #dab785; /* Warm beige */
+  --chart-3: rgba(167, 255, 217, 0.7); /* Semi-transparent mint */
+  --chart-4: rgba(218, 183, 133, 0.7); /* Semi-transparent beige */
+  --chart-5: rgba(27, 67, 50, 0.9); /* Very dark green */
+  --sidebar: rgba(27, 67, 50, 0.9); /* Dark green sidebar */
+  --sidebar-foreground: #a7ffd9; /* Mint sidebar text */
+  --sidebar-primary: #a7ffd9; /* Mint sidebar primary */
+  --sidebar-primary-foreground: #1b4332; /* Dark green sidebar primary text */
+  --sidebar-accent: rgba(
+    218,
+    183,
+    133,
+    0.8
+  ); /* Semi-transparent beige accent */
+  --sidebar-accent-foreground: #1b4332; /* Dark green sidebar accent text */
+  --sidebar-border: rgba(
+    167,
+    255,
+    217,
+    0.1
+  ); /* Very dark mint sidebar border */
+  --sidebar-ring: #a7ffd9; /* Mint sidebar ring */
 }
 
 @layer base {
@@ -154,7 +157,7 @@
     letter-spacing: -0.02em;
   }
 
-  /* Smooth transitions for earth tone theme */
+  /* Smooth transitions for logo color theme */
   * {
     transition:
       background-color 0.2s ease,

@@ -1,6 +1,7 @@
 import { memo, useState, useEffect, useCallback } from 'react';
+import { ChevronRight } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Play, Users, Building, Globe, Star } from 'lucide-react';
 import heroBg from '@/assets/hero-safari-bg.jpg';
 
 function HeroSection() {

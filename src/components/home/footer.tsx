@@ -86,35 +86,15 @@ function Footer() {
                 href="mailto:hello@theshuriway.com"
                 className="group inline-flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200"
                 style={{ backgroundColor: 'rgba(218, 165, 32, 0.1)' }}
-                onMouseEnter={(e) =>
-                  ((e.target as HTMLElement).style.backgroundColor =
-                    'rgba(218, 165, 32, 0.2)')
-                }
-                onMouseLeave={(e) =>
-                  ((e.target as HTMLElement).style.backgroundColor =
-                    'rgba(218, 165, 32, 0.1)')
-                }
               >
                 <Mail
                   size={20}
                   className="transition-colors duration-200"
                   style={{ color: '#d8c3a5' }}
-                  onMouseEnter={(e) =>
-                    ((e.target as HTMLElement).style.color = '#daa520')
-                  }
-                  onMouseLeave={(e) =>
-                    ((e.target as HTMLElement).style.color = '#d8c3a5')
-                  }
                 />
                 <span
                   className="font-medium transition-colors duration-200"
                   style={{ color: '#d8c3a5' }}
-                  onMouseEnter={(e) =>
-                    ((e.target as HTMLElement).style.color = 'white')
-                  }
-                  onMouseLeave={(e) =>
-                    ((e.target as HTMLElement).style.color = '#d8c3a5')
-                  }
                 >
                   hello@theshuriway.com
                 </span>

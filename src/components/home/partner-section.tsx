@@ -6,25 +6,25 @@ function PartnersSection() {
       name: 'Shuri Collection',
       logo: '/partners/shuri.webp',
       description: 'Premium safari experiences',
-      bgClass: 'bg-savanna-green/10 hover:bg-savanna-green/15',
-      borderClass: 'border-savanna-green/30 hover:border-savanna-green',
-      accentClass: 'bg-savanna-green',
+      bgClass: 'bg-gray-50 hover:bg-gray-100',
+      borderClass: 'border-[#1B4332]/30 hover:border-[#1B4332]',
+      accentClass: 'bg-[#1B4332]',
     },
     {
       name: 'Xihare',
       logo: '/partners/xihare.png',
       description: 'Luxury wilderness lodges',
-      bgClass: 'bg-earth-gold/10 hover:bg-earth-gold/15',
-      borderClass: 'border-earth-gold/30 hover:border-earth-gold',
-      accentClass: 'bg-earth-gold',
+      bgClass: 'bg-[#A7FFD9]/10 hover:bg-[#A7FFD9]/20',
+      borderClass: 'border-[#A7FFD9]/60 hover:border-[#A7FFD9]',
+      accentClass: 'bg-[#A7FFD9]',
     },
     {
       name: 'Bush Villa Collection',
       logo: '/partners/bush-villa.png',
       description: 'Authentic safari accommodations',
-      bgClass: 'bg-sunset-orange/10 hover:bg-sunset-orange/15',
-      borderClass: 'border-sunset-orange/30 hover:border-sunset-orange',
-      accentClass: 'bg-sunset-orange',
+      bgClass: 'bg-[#DAB785]/10 hover:bg-[#DAB785]/20',
+      borderClass: 'border-[#DAB785]/60 hover:border-[#DAB785]',
+      accentClass: 'bg-[#DAB785]',
       subBrands: [
         {
           name: 'Bush Willow',
@@ -44,9 +44,9 @@ function PartnersSection() {
       name: 'Kelora Bush Camp',
       logo: '/partners/kelora.png',
       description: 'Intimate wildlife experiences',
-      bgClass: 'bg-dusk-brown/10 hover:bg-dusk-brown/15',
-      borderClass: 'border-dusk-brown/30 hover:border-dusk-brown',
-      accentClass: 'bg-dusk-brown',
+      bgClass: 'bg-gray-50 hover:bg-gray-100',
+      borderClass: 'border-[#1B4332]/30 hover:border-[#1B4332]',
+      accentClass: 'bg-[#1B4332]',
     },
   ];
 
@@ -57,10 +57,10 @@ function PartnersSection() {
       author: 'Sarah Mitchell',
       role: 'Lodge Operations Manager',
       company: 'East African Safari Lodges',
-      bgClass: 'bg-savanna-green/10 hover:bg-savanna-green/15',
-      borderClass: 'border-savanna-green/30 hover:border-savanna-green',
-      avatarClass: 'bg-gradient-to-r from-savanna-green to-savanna-green/90',
-      companyColor: 'text-savanna-green',
+      bgClass: 'bg-gray-50 hover:bg-gray-100',
+      borderClass: 'border-[#1B4332]/30 hover:border-[#1B4332]',
+      avatarClass: 'bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90',
+      companyColor: 'text-[#1B4332]',
     },
     {
       quote:
@@ -68,10 +68,10 @@ function PartnersSection() {
       author: 'David Kamau',
       role: 'Senior Tour Operator',
       company: 'Kenya Safari Specialists',
-      bgClass: 'bg-earth-gold/10 hover:bg-earth-gold/15',
-      borderClass: 'border-earth-gold/30 hover:border-earth-gold',
-      avatarClass: 'bg-gradient-to-r from-earth-gold to-earth-gold/90',
-      companyColor: 'text-earth-gold',
+      bgClass: 'bg-[#A7FFD9]/10 hover:bg-[#A7FFD9]/20',
+      borderClass: 'border-[#A7FFD9]/60 hover:border-[#A7FFD9]',
+      avatarClass: 'bg-gradient-to-r from-[#A7FFD9] to-[#A7FFD9]/90',
+      companyColor: 'text-[#1B4332]',
     },
     {
       quote:
@@ -79,23 +79,23 @@ function PartnersSection() {
       author: 'Emma Thompson',
       role: 'Travel Consultant',
       company: 'African Adventure Co.',
-      bgClass: 'bg-sunset-orange/10 hover:bg-sunset-orange/15',
-      borderClass: 'border-sunset-orange/30 hover:border-sunset-orange',
-      avatarClass: 'bg-gradient-to-r from-sunset-orange to-sunset-orange/90',
-      companyColor: 'text-sunset-orange',
+      bgClass: 'bg-[#DAB785]/10 hover:bg-[#DAB785]/20',
+      borderClass: 'border-[#DAB785]/60 hover:border-[#DAB785]',
+      avatarClass: 'bg-gradient-to-r from-[#DAB785] to-[#DAB785]/90',
+      companyColor: 'text-[#1B4332]',
     },
   ];
 
   return (
-    <section id="partners" className="bg-sand-beige/10 py-16 lg:py-24">
+    <section id="partners" className="bg-white py-16 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <h2 className="font-safari text-deep-charcoal mb-6 text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl">
+          <h2 className="mb-6 text-3xl leading-tight font-bold text-[#1B4332] sm:text-4xl lg:text-5xl">
             Trusted by safari pioneers
             <br />
-            <span className="text-savanna-green">and rising brands alike.</span>
+            <span className="text-[#1B4332]">and rising brands alike.</span>
           </h2>
-          <p className="text-dusk-brown mx-auto max-w-3xl text-lg leading-relaxed md:text-xl">
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-600 md:text-xl">
             Leading safari companies are already partnering with us to shape the
             future of the industry.
           </p>
@@ -105,7 +105,7 @@ function PartnersSection() {
           {partners.map((partner, index) => (
             <div
               key={index}
-              className={`group rounded-2xl border-2 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl lg:p-8 ${partner.bgClass} ${partner.borderClass}`}
+              className={`group rounded-2xl border-2 p-6 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl lg:p-8 ${partner.bgClass} ${partner.borderClass}`}
             >
               <div className="mb-4 flex h-20 items-center justify-center lg:h-24">
                 <img
@@ -115,10 +115,10 @@ function PartnersSection() {
                 />
               </div>
 
-              <h3 className="font-safari text-deep-charcoal mb-2 text-lg font-bold lg:text-xl">
+              <h3 className="mb-2 text-lg font-bold text-[#1B4332] lg:text-xl">
                 {partner.name}
               </h3>
-              <p className="text-dusk-brown text-sm lg:text-base">
+              <p className="text-sm text-gray-600 lg:text-base">
                 {partner.description}
               </p>
 
@@ -132,9 +132,9 @@ function PartnersSection() {
                       <img
                         src={sub.logo}
                         alt={sub.name + ' logo'}
-                        className="border-sunset-orange/30 group-hover/sub:border-sunset-orange h-10 w-10 rounded-md border-2 bg-white object-contain p-1 shadow-sm transition-all duration-300 group-hover/sub:scale-110"
+                        className="h-10 w-10 rounded-md border-2 border-[#DAB785]/30 bg-white object-contain p-1 shadow-sm transition-all duration-300 group-hover/sub:scale-110 group-hover/sub:border-[#DAB785]"
                       />
-                      <span className="text-dusk-brown mt-1 text-xs font-medium">
+                      <span className="mt-1 text-xs font-medium text-gray-600">
                         {sub.name}
                       </span>
                     </div>
@@ -153,11 +153,11 @@ function PartnersSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`group rounded-2xl border-2 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl lg:p-8 ${testimonial.bgClass} ${testimonial.borderClass}`}
+              className={`group rounded-2xl border-2 p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl lg:p-8 ${testimonial.bgClass} ${testimonial.borderClass}`}
             >
               <div className="mb-6">
-                <div className="text-earth-gold mb-4 text-3xl font-bold">"</div>
-                <p className="text-dusk-brown text-base leading-relaxed italic lg:text-lg">
+                <div className="mb-4 text-3xl font-bold text-[#1B4332]">"</div>
+                <p className="text-base leading-relaxed text-gray-600 italic lg:text-lg">
                   {testimonial.quote}
                 </p>
               </div>
@@ -172,10 +172,10 @@ function PartnersSection() {
                     .join('')}
                 </div>
                 <div>
-                  <p className="text-deep-charcoal font-semibold">
+                  <p className="font-semibold text-[#1B4332]">
                     {testimonial.author}
                   </p>
-                  <p className="text-dusk-brown text-sm">{testimonial.role}</p>
+                  <p className="text-sm text-gray-600">{testimonial.role}</p>
                   <p
                     className={`text-sm font-medium ${testimonial.companyColor}`}
                   >
@@ -188,9 +188,9 @@ function PartnersSection() {
         </div>
 
         <div className="mt-20 text-center">
-          <div className="bg-savanna-green/10 hover:bg-savanna-green/15 border-savanna-green/30 hover:border-savanna-green inline-flex items-center rounded-2xl border-2 px-8 py-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105">
+          <div className="inline-flex items-center rounded-2xl border-2 border-[#1B4332]/20 bg-gray-50 px-8 py-6 shadow-lg transition-all duration-300 hover:scale-105 hover:border-[#1B4332] hover:bg-gray-100">
             <span className="mr-3 text-2xl">🤝</span>
-            <span className="text-deep-charcoal text-base font-semibold md:text-lg">
+            <span className="text-base font-semibold text-[#1B4332] md:text-lg">
               Want to be featured as a partner? Join our waitlist
             </span>
           </div>

@@ -19,11 +19,11 @@ function AudienceSection() {
         { text: 'Sell Directly' },
         { text: 'Know Your Guests' },
       ],
-      bgClass: 'bg-savanna-green/10 hover:bg-savanna-green/15',
-      borderClass: 'border-savanna-green/30 hover:border-savanna-green',
-      subtitleColor: 'text-savanna-green',
-      aiSubcopyColor: 'text-savanna-green',
-      dotColor: 'bg-savanna-green',
+      bgClass: 'bg-white hover:bg-gray-50',
+      borderClass: 'border-[#1B4332]/30 hover:border-[#1B4332]',
+      subtitleColor: 'text-[#1B4332]',
+      aiSubcopyColor: 'text-[#1B4332]',
+      dotColor: 'bg-[#1B4332]',
     },
     {
       id: 'operators',
@@ -40,11 +40,11 @@ function AudienceSection() {
         { text: 'Instant Pricing Tools' },
         { text: 'Client CRM' },
       ],
-      bgClass: 'bg-earth-gold/10 hover:bg-earth-gold/15',
-      borderClass: 'border-earth-gold/30 hover:border-earth-gold',
-      subtitleColor: 'text-earth-gold',
-      aiSubcopyColor: 'text-earth-gold',
-      dotColor: 'bg-earth-gold',
+      bgClass: 'bg-[#A7FFD9]/10 hover:bg-[#A7FFD9]/20',
+      borderClass: 'border-[#A7FFD9]/60 hover:border-[#A7FFD9]',
+      subtitleColor: 'text-[#1B4332]',
+      aiSubcopyColor: 'text-[#1B4332]',
+      dotColor: 'bg-[#A7FFD9]',
     },
     {
       id: 'travelers',
@@ -61,11 +61,11 @@ function AudienceSection() {
         { text: 'Compare Lodges' },
         { text: 'Book Seamlessly' },
       ],
-      bgClass: 'bg-sunset-orange/10 hover:bg-sunset-orange/15',
-      borderClass: 'border-sunset-orange/30 hover:border-sunset-orange',
-      subtitleColor: 'text-sunset-orange',
-      aiSubcopyColor: 'text-sunset-orange',
-      dotColor: 'bg-sunset-orange',
+      bgClass: 'bg-[#DAB785]/10 hover:bg-[#DAB785]/20',
+      borderClass: 'border-[#DAB785]/60 hover:border-[#DAB785]',
+      subtitleColor: 'text-[#1B4332]',
+      aiSubcopyColor: 'text-[#1B4332]',
+      dotColor: 'bg-[#DAB785]',
     },
     {
       id: 'providers',
@@ -82,25 +82,25 @@ function AudienceSection() {
         { text: 'Be Part of Trips' },
         { text: 'Get Verified & Reviewed' },
       ],
-      bgClass: 'bg-dusk-brown/10 hover:bg-dusk-brown/15',
-      borderClass: 'border-dusk-brown/30 hover:border-dusk-brown',
-      subtitleColor: 'text-dusk-brown',
-      aiSubcopyColor: 'text-dusk-brown',
-      dotColor: 'bg-dusk-brown',
+      bgClass: 'bg-white hover:bg-gray-50',
+      borderClass: 'border-[#1B4332]/30 hover:border-[#1B4332]',
+      subtitleColor: 'text-[#1B4332]',
+      aiSubcopyColor: 'text-[#1B4332]',
+      dotColor: 'bg-[#1B4332]',
     },
   ];
 
   return (
-    <section id="audience" className="bg-sand-beige/20 py-16 lg:py-24">
+    <section id="audience" className="bg-gray-50 py-16 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center">
-          <h2 className="font-safari text-deep-charcoal mb-6 text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl">
+          <h2 className="mb-6 text-3xl leading-tight font-bold text-[#1B4332] sm:text-4xl lg:text-5xl">
             Built for everyone in
             <br />
-            <span className="text-savanna-green">the safari ecosystem</span>
+            <span className="text-[#1B4332]">the safari ecosystem</span>
           </h2>
-          <p className="text-dusk-brown mx-auto max-w-3xl text-lg leading-relaxed md:text-xl">
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-600 md:text-xl">
             No matter your role in safari, Shuri Way has tools designed
             specifically for you.
           </p>
@@ -111,12 +111,12 @@ function AudienceSection() {
           {audiences.map((audience, index) => (
             <div
               key={audience.id}
-              className={`group rounded-2xl border-2 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl lg:p-8 ${audience.bgClass} ${audience.borderClass}`}
+              className={`group rounded-2xl border-2 p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl lg:p-8 ${audience.bgClass} ${audience.borderClass}`}
             >
               <div className="relative">
                 {/* Header */}
                 <div className="mb-6 flex items-center">
-                  <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl border-2 border-white/50 bg-white/90 text-2xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:border-current group-hover:bg-white">
+                  <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl border-2 border-gray-200 bg-white text-2xl shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:border-current group-hover:bg-white">
                     {audience.emoji}
                   </div>
                   <span
@@ -127,12 +127,12 @@ function AudienceSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-safari text-deep-charcoal mb-4 text-xl leading-tight font-bold lg:text-2xl">
+                <h3 className="mb-4 text-xl leading-tight font-bold text-[#1B4332] lg:text-2xl">
                   {audience.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-dusk-brown mb-4 text-base leading-relaxed lg:text-lg">
+                <p className="mb-4 text-base leading-relaxed text-gray-600 lg:text-lg">
                   {audience.description}
                 </p>
 
@@ -148,7 +148,7 @@ function AudienceSection() {
                   {audience.ctaButtons.map((cta, ctaIndex) => (
                     <div
                       key={ctaIndex}
-                      className="text-deep-charcoal flex items-center rounded-lg border border-white/30 bg-white/60 px-4 py-3 text-sm font-medium transition-all duration-300 group-hover:translate-x-1 hover:border-white/50 hover:bg-white/80"
+                      className="flex items-center rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-[#1B4332] shadow-sm transition-all duration-300 group-hover:translate-x-1 hover:border-gray-300 hover:shadow-md"
                       style={{ transitionDelay: `${ctaIndex * 100}ms` }}
                     >
                       <div
@@ -174,7 +174,7 @@ function AudienceSection() {
 
         {/* Bottom CTA */}
         <div className="mt-20 text-center">
-          <p className="text-dusk-brown mb-6 text-lg">
+          <p className="mb-6 text-lg text-gray-600">
             Ready to transform how you work in safari?
           </p>
           <Button
@@ -182,7 +182,7 @@ function AudienceSection() {
               const element = document.getElementById('cta');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group from-savanna-green to-savanna-green/90 hover:from-savanna-green/90 hover:to-savanna-green border-savanna-green/30 rounded-2xl border bg-gradient-to-r px-12 py-6 text-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            className="group rounded-2xl border border-[#1B4332]/20 bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90 px-12 py-6 text-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-[#1B4332]/90 hover:to-[#1B4332] hover:shadow-xl"
           >
             <span className="flex items-center gap-3">
               Join the Revolution

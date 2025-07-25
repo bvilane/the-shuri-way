@@ -83,33 +83,30 @@ function WaitlistSection() {
 
   if (isSubmitted) {
     return (
-      <section
-        id="cta"
-        className="from-sand-beige/15 to-sand-beige/30 bg-gradient-to-b py-16 lg:py-24"
-      >
+      <section id="cta" className="bg-gray-50 py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="border-savanna-green/30 from-savanna-green/10 to-earth-gold/10 rounded-2xl border-2 bg-gradient-to-br p-8 shadow-xl backdrop-blur-sm lg:p-12">
+            <div className="rounded-2xl border-2 border-[#1B4332]/20 bg-white p-8 shadow-xl lg:p-12">
               {/* Success Icon */}
-              <div className="from-savanna-green to-earth-gold mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r">
+              <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90">
                 <CheckCircle size={32} className="text-white" />
               </div>
 
               {/* Success Message */}
-              <h2 className="font-safari text-deep-charcoal mb-6 text-2xl font-bold lg:text-3xl">
+              <h2 className="mb-6 text-2xl font-bold text-[#1B4332] lg:text-3xl">
                 You're in! Welcome to the revolution.
               </h2>
 
-              <p className="text-dusk-brown mb-8 text-lg leading-relaxed">
+              <p className="mb-8 text-lg leading-relaxed text-gray-600">
                 Thanks for joining the waitlist,{' '}
-                <span className="text-savanna-green font-semibold">
+                <span className="font-semibold text-[#1B4332]">
                   {formData.name}
                 </span>
                 ! You'll be among the first to experience Shuri Way when we
                 launch.
               </p>
 
-              <div className="text-dusk-brown space-y-3">
+              <div className="space-y-3 text-gray-600">
                 <div className="flex items-center justify-center">
                   <span className="mr-3">🚀</span>
                   <span>Get exclusive updates on our progress</span>
@@ -127,18 +124,15 @@ function WaitlistSection() {
   }
 
   return (
-    <section
-      id="cta"
-      className="from-sand-beige/20 to-sand-beige/35 bg-gradient-to-b py-16 lg:py-24"
-    >
+    <section id="cta" className="bg-gray-50 py-16 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           {/* Header */}
-          <h2 className="font-safari text-deep-charcoal mb-6 text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl">
+          <h2 className="mb-6 text-3xl leading-tight font-bold text-[#1B4332] sm:text-4xl lg:text-5xl">
             The future of safari runs on intelligence.
           </h2>
 
-          <p className="text-dusk-brown mb-12 text-lg leading-relaxed md:text-xl">
+          <p className="mb-12 text-lg leading-relaxed text-gray-600 md:text-xl">
             Be the first to use Shuri AI — our integrated assistant that helps
             travelers, operators, and lodges make smarter decisions, faster.
           </p>
@@ -146,19 +140,19 @@ function WaitlistSection() {
           {/* Form Container */}
           <div className="relative">
             {/* Background with enhanced visual appeal */}
-            <div className="from-savanna-green/10 via-earth-gold/5 to-sunset-orange/10 absolute inset-0 rounded-3xl bg-gradient-to-br blur-3xl"></div>
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#A7FFD9]/10 via-[#DAB785]/5 to-[#1B4332]/10 blur-3xl"></div>
 
-            <div className="border-earth-gold/30 relative rounded-3xl border-2 bg-white/90 p-8 shadow-2xl backdrop-blur-xl lg:p-12">
+            <div className="relative rounded-3xl border-2 border-[#1B4332]/20 bg-white p-8 shadow-2xl lg:p-12">
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Form Fields */}
                 <div className="space-y-6">
                   {/* Name Field */}
                   <div className="group">
-                    <label className="text-dusk-brown mb-2 block text-left text-sm font-medium">
+                    <label className="mb-2 block text-left text-sm font-medium text-gray-700">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <User className="text-dusk-brown/60 absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform" />
+                      <User className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
                       <Input
                         type="text"
                         placeholder="Enter your full name"
@@ -167,7 +161,7 @@ function WaitlistSection() {
                           handleInputChange('name', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="border-sand-beige/60 placeholder:text-dusk-brown/50 hover:border-earth-gold/60 focus:border-savanna-green focus:ring-savanna-green/20 h-14 rounded-xl border-2 bg-white pr-4 pl-12 text-base transition-all duration-300 focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-14 rounded-xl border-2 border-gray-200 bg-white pr-4 pl-12 text-base transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-4 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                         required
                       />
                     </div>
@@ -175,11 +169,11 @@ function WaitlistSection() {
 
                   {/* Email Field */}
                   <div className="group">
-                    <label className="text-dusk-brown mb-2 block text-left text-sm font-medium">
+                    <label className="mb-2 block text-left text-sm font-medium text-gray-700">
                       Email Address *
                     </label>
                     <div className="relative">
-                      <Mail className="text-dusk-brown/60 absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform" />
+                      <Mail className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
                       <Input
                         type="email"
                         placeholder="Enter your email address"
@@ -188,7 +182,7 @@ function WaitlistSection() {
                           handleInputChange('email', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="border-sand-beige/60 placeholder:text-dusk-brown/50 hover:border-earth-gold/60 focus:border-savanna-green focus:ring-savanna-green/20 h-14 rounded-xl border-2 bg-white pr-4 pl-12 text-base transition-all duration-300 focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-14 rounded-xl border-2 border-gray-200 bg-white pr-4 pl-12 text-base transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-4 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                         required
                       />
                     </div>
@@ -196,11 +190,11 @@ function WaitlistSection() {
 
                   {/* Role Field */}
                   <div className="group">
-                    <label className="text-dusk-brown mb-2 block text-left text-sm font-medium">
+                    <label className="mb-2 block text-left text-sm font-medium text-gray-700">
                       Your Role *
                     </label>
                     <div className="relative">
-                      <UserCircle className="text-dusk-brown/60 absolute top-1/2 left-4 z-10 h-5 w-5 -translate-y-1/2 transform" />
+                      <UserCircle className="absolute top-1/2 left-4 z-10 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
                       <Select
                         onValueChange={(value) =>
                           handleInputChange('role', value)
@@ -208,31 +202,31 @@ function WaitlistSection() {
                         disabled={isSubmitting}
                         required
                       >
-                        <SelectTrigger className="border-sand-beige/60 hover:border-earth-gold/60 focus:border-savanna-green focus:ring-savanna-green/20 data-[placeholder]:text-dusk-brown/50 h-14 w-full rounded-xl border-2 bg-white pr-4 pl-12 text-base transition-all duration-300 focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50">
+                        <SelectTrigger className="h-14 w-full rounded-xl border-2 border-gray-200 bg-white pr-4 pl-12 text-base transition-all duration-300 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-4 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50 data-[placeholder]:text-gray-400">
                           <SelectValue placeholder="Select your role" />
                         </SelectTrigger>
-                        <SelectContent className="border-earth-gold/30 rounded-xl border-2 bg-white shadow-xl">
+                        <SelectContent className="rounded-xl border-2 border-[#1B4332]/20 bg-white shadow-xl">
                           <SelectItem
                             value="lodge"
-                            className="hover:bg-savanna-green/10 focus:bg-savanna-green/15 h-12 rounded-lg text-base"
+                            className="h-12 rounded-lg text-base hover:bg-[#1B4332]/10 focus:bg-[#1B4332]/15"
                           >
                             🏨 Lodge Owner/Manager
                           </SelectItem>
                           <SelectItem
                             value="operator"
-                            className="hover:bg-earth-gold/10 focus:bg-earth-gold/15 h-12 rounded-lg text-base"
+                            className="h-12 rounded-lg text-base hover:bg-[#A7FFD9]/10 focus:bg-[#A7FFD9]/15"
                           >
                             🚐 Tour Operator
                           </SelectItem>
                           <SelectItem
                             value="traveler"
-                            className="hover:bg-sunset-orange/10 focus:bg-sunset-orange/15 h-12 rounded-lg text-base"
+                            className="h-12 rounded-lg text-base hover:bg-[#DAB785]/10 focus:bg-[#DAB785]/15"
                           >
                             ✈️ Traveler
                           </SelectItem>
                           <SelectItem
                             value="provider"
-                            className="hover:bg-dusk-brown/10 focus:bg-dusk-brown/15 h-12 rounded-lg text-base"
+                            className="h-12 rounded-lg text-base hover:bg-[#1B4332]/10 focus:bg-[#1B4332]/15"
                           >
                             🛠️ Service Provider
                           </SelectItem>
@@ -243,12 +237,12 @@ function WaitlistSection() {
 
                   {/* Company Field */}
                   <div className="group">
-                    <label className="text-dusk-brown mb-2 block text-left text-sm font-medium">
+                    <label className="mb-2 block text-left text-sm font-medium text-gray-700">
                       Company Name{' '}
-                      <span className="text-dusk-brown/60">(Optional)</span>
+                      <span className="text-gray-500">(Optional)</span>
                     </label>
                     <div className="relative">
-                      <Building className="text-dusk-brown/60 absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform" />
+                      <Building className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
                       <Input
                         type="text"
                         placeholder="Enter your company name"
@@ -257,7 +251,7 @@ function WaitlistSection() {
                           handleInputChange('company', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="border-sand-beige/60 placeholder:text-dusk-brown/50 hover:border-earth-gold/60 focus:border-savanna-green focus:ring-savanna-green/20 h-14 rounded-xl border-2 bg-white pr-4 pl-12 text-base transition-all duration-300 focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-14 rounded-xl border-2 border-gray-200 bg-white pr-4 pl-12 text-base transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-4 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                       />
                     </div>
                   </div>
@@ -268,7 +262,7 @@ function WaitlistSection() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group from-savanna-green via-savanna-green to-savanna-green/90 hover:from-savanna-green/90 hover:via-savanna-green hover:to-savanna-green border-savanna-green/30 relative h-16 w-full overflow-hidden rounded-xl border bg-gradient-to-r text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
+                    className="group relative h-16 w-full overflow-hidden rounded-xl border border-[#1B4332]/20 bg-gradient-to-r from-[#1B4332] via-[#1B4332] to-[#1B4332]/90 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.02] hover:from-[#1B4332]/90 hover:via-[#1B4332] hover:to-[#1B4332] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
                   >
                     <div className="absolute inset-0 -translate-x-full -skew-x-12 transform bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 group-hover:translate-x-full"></div>
                     <span className="relative flex items-center justify-center gap-3">
@@ -289,10 +283,10 @@ function WaitlistSection() {
               </form>
 
               {/* Privacy Note */}
-              <div className="border-sand-beige/60 mt-8 border-t pt-6">
-                <div className="text-dusk-brown flex items-start gap-3 text-sm leading-relaxed">
-                  <div className="bg-earth-gold/20 mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full">
-                    <div className="bg-earth-gold h-2 w-2 rounded-full"></div>
+              <div className="mt-8 border-t border-gray-200 pt-6">
+                <div className="flex items-start gap-3 text-sm leading-relaxed text-gray-600">
+                  <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#A7FFD9]/20">
+                    <div className="h-2 w-2 rounded-full bg-[#A7FFD9]"></div>
                   </div>
                   <p>
                     By joining, you'll receive exclusive updates about Shuri
