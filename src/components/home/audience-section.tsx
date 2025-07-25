@@ -7,7 +7,7 @@ function AudienceSection() {
     {
       id: 'lodges',
       image:
-        'https://images.unsplash.com/photo-1564399580075-5dfe19c205f3?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0',
+        'https://images.unsplash.com/photo-1644780400761-6a59d1268062?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       alt: 'Safari Lodge Management',
       title: 'Take control of your bookings and guest experiences',
       subtitle: 'FOR LODGES',
@@ -27,7 +27,7 @@ function AudienceSection() {
     {
       id: 'operators',
       image:
-        'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0',
+        'https://images.unsplash.com/photo-1489628443677-552b17700861?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       alt: 'Tour Operator Planning',
       title: 'Build multi-lodge itineraries in minutes — not hours',
       subtitle: 'FOR TOUR OPERATORS',
@@ -47,7 +47,7 @@ function AudienceSection() {
     {
       id: 'travelers',
       image:
-        'https://images.unsplash.com/photo-1549317336-206569e8475c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0',
+        'https://images.unsplash.com/photo-1568888539200-ea13741b9e4d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       alt: 'Safari Travelers Experience',
       title: 'Design your dream safari or book ready-made experiences',
       subtitle: 'FOR TRAVELERS',
