@@ -1,101 +1,96 @@
 import { memo } from 'react';
 import { Button } from '@/components/ui/button';
-import { Building, Users, Globe, Truck, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 function AudienceSection() {
   const audiences = [
     {
       id: 'lodges',
-      icon: Building,
-      emoji: '🛖',
-      title: 'Take control of your bookings, your experiences, and your brand.',
+      image:
+        'https://images.unsplash.com/photo-1564399580075-5dfe19c205f3?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0',
+      alt: 'Safari Lodge Management',
+      title: 'Take control of your bookings and guest experiences',
       subtitle: 'FOR LODGES',
       description:
-        'Shuri Way replaces outdated booking tools with a seamless, beautiful dashboard that helps your lodge run smarter — from guest CRM to upselling experiences.',
-      aiSubcopy:
-        "With Shuri AI, you'll get smart pricing suggestions, guest personalization tips, and automated availability insights — all from your dashboard.",
-      ctaButtons: [
-        { text: 'Manage Availability' },
-        { text: 'Sell Directly' },
-        { text: 'Know Your Guests' },
+        'Seamless dashboard that helps your lodge run smarter — from guest CRM to upselling experiences.',
+      aiFeature:
+        'AI suggests optimal pricing and predicts guest preferences to maximize revenue',
+      features: [
+        'Real-time Availability Management',
+        'Direct Booking Engine',
+        'Guest Insights & Analytics',
       ],
       bgClass: 'bg-white hover:bg-gray-50',
-      borderClass: 'border-[#1B4332]/30 hover:border-[#1B4332]',
-      subtitleColor: 'text-[#1B4332]',
-      aiSubcopyColor: 'text-[#1B4332]',
-      dotColor: 'bg-[#1B4332]',
+      borderClass: 'border-gray-200 hover:border-[#1B4332]',
+      accentClass: 'bg-[#1B4332]',
     },
     {
       id: 'operators',
-      icon: Users,
-      emoji: '🧭',
-      title: 'Build multi-lodge itineraries in minutes — not hours.',
+      image:
+        'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0',
+      alt: 'Tour Operator Planning',
+      title: 'Build multi-lodge itineraries in minutes — not hours',
       subtitle: 'FOR TOUR OPERATORS',
       description:
-        'Drag, drop, and quote beautiful custom trips with real-time lodge availability and integrated transport options. No more spreadsheets. No more guesswork.',
-      aiSubcopy:
-        "Let Shuri AI recommend the perfect lodges, auto-generate multi-stop itineraries, and draft quotes in minutes based on your client's needs.",
-      ctaButtons: [
-        { text: 'Multi-stop Itinerary Builder' },
-        { text: 'Instant Pricing Tools' },
-        { text: 'Client CRM' },
+        'Drag, drop, and quote beautiful custom trips with real-time availability and integrated transport options.',
+      aiFeature:
+        "AI crafts perfect itineraries and instant quotes tailored to each client's dreams",
+      features: [
+        'Visual Itinerary Builder',
+        'Real-time Pricing Engine',
+        'Client Relationship Tools',
       ],
-      bgClass: 'bg-[#A7FFD9]/10 hover:bg-[#A7FFD9]/20',
-      borderClass: 'border-[#A7FFD9]/60 hover:border-[#A7FFD9]',
-      subtitleColor: 'text-[#1B4332]',
-      aiSubcopyColor: 'text-[#1B4332]',
-      dotColor: 'bg-[#A7FFD9]',
+      bgClass: 'bg-white hover:bg-[#A7FFD9]/5',
+      borderClass: 'border-gray-200 hover:border-[#A7FFD9]',
+      accentClass: 'bg-[#A7FFD9]',
     },
     {
       id: 'travelers',
-      icon: Globe,
-      emoji: '🌍',
-      title: 'Design your dream safari. Or book a ready-made one.',
+      image:
+        'https://images.unsplash.com/photo-1549317336-206569e8475c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0',
+      alt: 'Safari Travelers Experience',
+      title: 'Design your dream safari or book ready-made experiences',
       subtitle: 'FOR TRAVELERS',
       description:
-        "Choose from curated experiences or build your own adventure. Shuri Way lets you connect directly with Africa's most iconic lodges and guides.",
-      aiSubcopy:
-        "Want help planning? Shuri AI can build your dream safari based on your budget, dates, and vibe. Just tell it what you're looking for.",
-      ctaButtons: [
-        { text: 'Discover Experiences' },
-        { text: 'Compare Lodges' },
-        { text: 'Book Seamlessly' },
+        "Choose from curated experiences or build your own adventure connecting directly with Africa's iconic lodges.",
+      aiFeature:
+        'AI creates your perfect safari adventure based on your style, budget, and bucket list',
+      features: [
+        'Curated Safari Experiences',
+        'Lodge & Guide Comparisons',
+        'Seamless Booking Flow',
       ],
-      bgClass: 'bg-[#DAB785]/10 hover:bg-[#DAB785]/20',
-      borderClass: 'border-[#DAB785]/60 hover:border-[#DAB785]',
-      subtitleColor: 'text-[#1B4332]',
-      aiSubcopyColor: 'text-[#1B4332]',
-      dotColor: 'bg-[#DAB785]',
+      bgClass: 'bg-white hover:bg-[#DAB785]/5',
+      borderClass: 'border-gray-200 hover:border-[#DAB785]',
+      accentClass: 'bg-[#DAB785]',
     },
     {
       id: 'providers',
-      icon: Truck,
-      emoji: '🚐',
-      title: 'Be where the bookings happen.',
+      image:
+        'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0',
+      alt: 'Safari Service Providers',
+      title: 'Get discovered and booked by industry leaders',
       subtitle: 'FOR SERVICE PROVIDERS',
       description:
-        'Shuri Way helps shuttle companies, guides, and specialists get listed, discovered, and booked as part of full safari experiences.',
-      aiSubcopy:
-        'From routing to package creation, Shuri AI helps providers streamline operations and get discovered by the right people, faster.',
-      ctaButtons: [
-        { text: 'Register Your Business' },
-        { text: 'Be Part of Trips' },
-        { text: 'Get Verified & Reviewed' },
+        'Shuttle companies, guides, and specialists get listed and booked as part of full safari experiences.',
+      aiFeature:
+        'AI matches your services with perfect trips and optimizes your route efficiency',
+      features: [
+        'Service Marketplace Listing',
+        'Integrated Trip Packages',
+        'Verified Provider Program',
       ],
       bgClass: 'bg-white hover:bg-gray-50',
-      borderClass: 'border-[#1B4332]/30 hover:border-[#1B4332]',
-      subtitleColor: 'text-[#1B4332]',
-      aiSubcopyColor: 'text-[#1B4332]',
-      dotColor: 'bg-[#1B4332]',
+      borderClass: 'border-gray-200 hover:border-[#1B4332]',
+      accentClass: 'bg-[#1B4332]',
     },
   ];
 
   return (
-    <section id="audience" className="bg-gray-50 py-16 lg:py-24">
+    <section id="audience" className="bg-gray-50 py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-16 text-center">
-          <h2 className="mb-6 text-3xl leading-tight font-bold text-[#1B4332] sm:text-4xl lg:text-5xl">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl leading-tight font-bold text-[#1B4332] sm:text-4xl lg:text-5xl">
             Built for everyone in
             <br />
             <span className="text-[#1B4332]">the safari ecosystem</span>
@@ -106,66 +101,67 @@ function AudienceSection() {
           </p>
         </div>
 
-        {/* Audience Cards */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:gap-8">
-          {audiences.map((audience, index) => (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+          {audiences.map((audience) => (
             <div
               key={audience.id}
-              className={`group rounded-2xl border-2 p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl lg:p-8 ${audience.bgClass} ${audience.borderClass}`}
+              className={`group overflow-hidden rounded-2xl border shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg ${audience.bgClass} ${audience.borderClass}`}
             >
-              <div className="relative">
-                {/* Header */}
-                <div className="mb-6 flex items-center">
-                  <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl border-2 border-gray-200 bg-white text-2xl shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:border-current group-hover:bg-white">
-                    {audience.emoji}
-                  </div>
-                  <span
-                    className={`text-sm font-bold tracking-wide uppercase ${audience.subtitleColor}`}
-                  >
+              {/* Image Header */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={audience.image}
+                  alt={audience.alt}
+                  className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="inline-block rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#1B4332] backdrop-blur-sm">
                     {audience.subtitle}
                   </span>
                 </div>
+              </div>
 
-                {/* Title */}
-                <h3 className="mb-4 text-xl leading-tight font-bold text-[#1B4332] lg:text-2xl">
+              {/* Content */}
+              <div className="p-6 lg:p-8">
+                <h3 className="mb-3 text-xl font-bold text-[#1B4332] lg:text-2xl">
                   {audience.title}
                 </h3>
 
-                {/* Description */}
-                <p className="mb-4 text-base leading-relaxed text-gray-600 lg:text-lg">
+                <p className="mb-4 text-base leading-relaxed text-gray-600">
                   {audience.description}
                 </p>
 
-                {/* AI Subcopy */}
-                <p
-                  className={`mb-6 text-sm leading-relaxed font-semibold lg:text-base ${audience.aiSubcopyColor}`}
-                >
-                  {audience.aiSubcopy}
-                </p>
+                {/* AI Feature Highlight */}
+                <div className="mb-6 rounded-xl border border-[#A7FFD9]/20 bg-gradient-to-r from-[#A7FFD9]/10 to-[#DAB785]/10 p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#A7FFD9] to-[#DAB785]">
+                      <span className="text-xs font-bold text-white">AI</span>
+                    </div>
+                    <p className="text-sm leading-relaxed font-medium text-[#1B4332]">
+                      {audience.aiFeature}
+                    </p>
+                  </div>
+                </div>
 
-                {/* Micro CTAs */}
+                {/* Features */}
                 <div className="space-y-3">
-                  {audience.ctaButtons.map((cta, ctaIndex) => (
+                  {audience.features.map((feature, featureIndex) => (
                     <div
-                      key={ctaIndex}
-                      className="flex items-center rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-[#1B4332] shadow-sm transition-all duration-300 group-hover:translate-x-1 hover:border-gray-300 hover:shadow-md"
-                      style={{ transitionDelay: `${ctaIndex * 100}ms` }}
+                      key={featureIndex}
+                      className="flex items-center gap-3 text-sm font-medium text-gray-600"
                     >
                       <div
-                        className={`mr-3 h-2 w-2 rounded-full ${audience.dotColor}`}
+                        className={`h-2 w-2 rounded-full ${audience.accentClass}`}
                       ></div>
-                      {cta.text}
-                      <ArrowRight
-                        size={16}
-                        className="ml-auto opacity-0 transition-opacity group-hover:opacity-100"
-                      />
+                      {feature}
                     </div>
                   ))}
                 </div>
 
                 {/* Accent line */}
                 <div
-                  className={`mt-6 h-1 w-12 rounded-full transition-all duration-300 group-hover:w-20 ${audience.dotColor}`}
+                  className={`mt-6 h-1 w-12 rounded-full transition-all duration-300 group-hover:w-16 ${audience.accentClass}`}
                 />
               </div>
             </div>
@@ -173,7 +169,7 @@ function AudienceSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-20 text-center">
+        <div className="mt-16 text-center">
           <p className="mb-6 text-lg text-gray-600">
             Ready to transform how you work in safari?
           </p>
@@ -182,11 +178,11 @@ function AudienceSection() {
               const element = document.getElementById('cta');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group rounded-2xl border border-[#1B4332]/20 bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90 px-12 py-6 text-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-[#1B4332]/90 hover:to-[#1B4332] hover:shadow-xl"
+            className="group rounded-2xl border border-[#1B4332]/20 bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-[#1B4332]/90 hover:to-[#1B4332] hover:shadow-xl"
           >
             <span className="flex items-center gap-3">
               Join the Revolution
-              <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </Button>
         </div>

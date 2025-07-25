@@ -8,6 +8,7 @@ import {
   Building,
   UserCircle,
   Loader2,
+  Sparkles,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -83,37 +84,51 @@ function WaitlistSection() {
 
   if (isSubmitted) {
     return (
-      <section id="cta" className="bg-gray-50 py-16 lg:py-24">
+      <section id="cta" className="bg-gray-50 py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="rounded-2xl border-2 border-[#1B4332]/20 bg-white p-8 shadow-xl lg:p-12">
-              {/* Success Icon */}
-              <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90">
-                <CheckCircle size={32} className="text-white" />
-              </div>
+          <div className="mx-auto max-w-2xl">
+            <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-xl">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#A7FFD9]/5 via-white to-[#DAB785]/5"></div>
 
-              {/* Success Message */}
-              <h2 className="mb-6 text-2xl font-bold text-[#1B4332] lg:text-3xl">
-                You're in! Welcome to the revolution.
-              </h2>
-
-              <p className="mb-8 text-lg leading-relaxed text-gray-600">
-                Thanks for joining the waitlist,{' '}
-                <span className="font-semibold text-[#1B4332]">
-                  {formData.name}
-                </span>
-                ! You'll be among the first to experience Shuri Way when we
-                launch.
-              </p>
-
-              <div className="space-y-3 text-gray-600">
-                <div className="flex items-center justify-center">
-                  <span className="mr-3">🚀</span>
-                  <span>Get exclusive updates on our progress</span>
+              <div className="relative p-8 text-center lg:p-12">
+                {/* Success Icon */}
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-[#1B4332] to-[#1B4332]/80 shadow-lg">
+                  <CheckCircle size={28} className="text-white" />
                 </div>
-                <div className="flex items-center justify-center">
-                  <span className="mr-3">⭐</span>
-                  <span>Early access to beta features</span>
+
+                {/* Success Message */}
+                <h2 className="mb-4 text-2xl font-bold text-[#1B4332] lg:text-3xl">
+                  You're in! Welcome to the revolution.
+                </h2>
+
+                <p className="mb-8 text-lg leading-relaxed text-gray-600">
+                  Thanks for joining the waitlist,{' '}
+                  <span className="font-semibold text-[#1B4332]">
+                    {formData.name}
+                  </span>
+                  ! You'll be among the first to experience Shuri Way when we
+                  launch.
+                </p>
+
+                {/* Benefits */}
+                <div className="mx-auto max-w-md space-y-4">
+                  <div className="flex items-center justify-center gap-3 rounded-xl bg-gray-50 p-4">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#A7FFD9]/20">
+                      <Sparkles className="h-4 w-4 text-[#1B4332]" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">
+                      Exclusive updates on our progress
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-3 rounded-xl bg-gray-50 p-4">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#DAB785]/20">
+                      <ArrowRight className="h-4 w-4 text-[#1B4332]" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">
+                      Early access to beta features
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -124,35 +139,49 @@ function WaitlistSection() {
   }
 
   return (
-    <section id="cta" className="bg-gray-50 py-16 lg:py-24">
+    <section id="cta" className="bg-gray-50 py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl">
           {/* Header */}
-          <h2 className="mb-6 text-3xl leading-tight font-bold text-[#1B4332] sm:text-4xl lg:text-5xl">
-            The future of safari runs on intelligence.
-          </h2>
-
-          <p className="mb-12 text-lg leading-relaxed text-gray-600 md:text-xl">
-            Be the first to use Shuri AI — our integrated assistant that helps
-            travelers, operators, and lodges make smarter decisions, faster.
-          </p>
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl leading-tight font-bold text-[#1B4332] sm:text-4xl lg:text-5xl">
+              The future of safari runs on intelligence.
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600 md:text-xl">
+              Be the first to use Shuri AI — our integrated assistant that helps
+              travelers, operators, and lodges make smarter decisions, faster.
+            </p>
+          </div>
 
           {/* Form Container */}
           <div className="relative">
-            {/* Background with enhanced visual appeal */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#A7FFD9]/10 via-[#DAB785]/5 to-[#1B4332]/10 blur-3xl"></div>
+            {/* Enhanced Background */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#A7FFD9]/10 via-white/50 to-[#DAB785]/10 blur-3xl"></div>
 
-            <div className="relative rounded-3xl border-2 border-[#1B4332]/20 bg-white p-8 shadow-2xl lg:p-12">
-              <form onSubmit={handleSubmit} className="space-y-8">
-                {/* Form Fields */}
-                <div className="space-y-6">
+            <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white/80 shadow-2xl backdrop-blur-sm">
+              {/* Form Header */}
+              <div className="border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white p-6 text-center lg:p-8">
+                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-[#A7FFD9] to-[#DAB785]">
+                  <Mail className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-[#1B4332] lg:text-xl">
+                  Join the Waitlist
+                </h3>
+                <p className="mt-1 text-sm text-gray-600">
+                  Get early access to Shuri Way
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="p-6 lg:p-8">
+                {/* Form Fields Grid */}
+                <div className="grid gap-6 md:grid-cols-2">
                   {/* Name Field */}
                   <div className="group">
-                    <label className="mb-2 block text-left text-sm font-medium text-gray-700">
+                    <label className="mb-2 block text-sm font-semibold text-gray-700">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <User className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
+                      <User className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400" />
                       <Input
                         type="text"
                         placeholder="Enter your full name"
@@ -161,7 +190,7 @@ function WaitlistSection() {
                           handleInputChange('name', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="h-14 rounded-xl border-2 border-gray-200 bg-white pr-4 pl-12 text-base transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-4 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-12 rounded-xl border border-gray-200 bg-white pr-4 pl-10 text-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                         required
                       />
                     </div>
@@ -169,20 +198,20 @@ function WaitlistSection() {
 
                   {/* Email Field */}
                   <div className="group">
-                    <label className="mb-2 block text-left text-sm font-medium text-gray-700">
+                    <label className="mb-2 block text-sm font-semibold text-gray-700">
                       Email Address *
                     </label>
                     <div className="relative">
-                      <Mail className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
+                      <Mail className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400" />
                       <Input
                         type="email"
-                        placeholder="Enter your email address"
+                        placeholder="Enter your email"
                         value={formData.email}
                         onChange={(e) =>
                           handleInputChange('email', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="h-14 rounded-xl border-2 border-gray-200 bg-white pr-4 pl-12 text-base transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-4 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-12 rounded-xl border border-gray-200 bg-white pr-4 pl-10 text-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                         required
                       />
                     </div>
@@ -190,11 +219,11 @@ function WaitlistSection() {
 
                   {/* Role Field */}
                   <div className="group">
-                    <label className="mb-2 block text-left text-sm font-medium text-gray-700">
+                    <label className="mb-2 block text-sm font-semibold text-gray-700">
                       Your Role *
                     </label>
                     <div className="relative">
-                      <UserCircle className="absolute top-1/2 left-4 z-10 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
+                      <UserCircle className="absolute top-1/2 left-3 z-10 h-4 w-4 -translate-y-1/2 text-gray-400" />
                       <Select
                         onValueChange={(value) =>
                           handleInputChange('role', value)
@@ -202,31 +231,31 @@ function WaitlistSection() {
                         disabled={isSubmitting}
                         required
                       >
-                        <SelectTrigger className="h-14 w-full rounded-xl border-2 border-gray-200 bg-white pr-4 pl-12 text-base transition-all duration-300 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-4 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50 data-[placeholder]:text-gray-400">
+                        <SelectTrigger className="h-12 w-full rounded-xl border border-gray-200 bg-white pr-4 pl-10 text-sm transition-all duration-300 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50 data-[placeholder]:text-gray-400">
                           <SelectValue placeholder="Select your role" />
                         </SelectTrigger>
-                        <SelectContent className="rounded-xl border-2 border-[#1B4332]/20 bg-white shadow-xl">
+                        <SelectContent className="rounded-xl border border-gray-200 bg-white shadow-xl">
                           <SelectItem
                             value="lodge"
-                            className="h-12 rounded-lg text-base hover:bg-[#1B4332]/10 focus:bg-[#1B4332]/15"
+                            className="rounded-lg text-sm hover:bg-[#1B4332]/5 focus:bg-[#1B4332]/10"
                           >
                             🏨 Lodge Owner/Manager
                           </SelectItem>
                           <SelectItem
                             value="operator"
-                            className="h-12 rounded-lg text-base hover:bg-[#A7FFD9]/10 focus:bg-[#A7FFD9]/15"
+                            className="rounded-lg text-sm hover:bg-[#A7FFD9]/5 focus:bg-[#A7FFD9]/10"
                           >
                             🚐 Tour Operator
                           </SelectItem>
                           <SelectItem
                             value="traveler"
-                            className="h-12 rounded-lg text-base hover:bg-[#DAB785]/10 focus:bg-[#DAB785]/15"
+                            className="rounded-lg text-sm hover:bg-[#DAB785]/5 focus:bg-[#DAB785]/10"
                           >
                             ✈️ Traveler
                           </SelectItem>
                           <SelectItem
                             value="provider"
-                            className="h-12 rounded-lg text-base hover:bg-[#1B4332]/10 focus:bg-[#1B4332]/15"
+                            className="rounded-lg text-sm hover:bg-[#1B4332]/5 focus:bg-[#1B4332]/10"
                           >
                             🛠️ Service Provider
                           </SelectItem>
@@ -237,64 +266,66 @@ function WaitlistSection() {
 
                   {/* Company Field */}
                   <div className="group">
-                    <label className="mb-2 block text-left text-sm font-medium text-gray-700">
+                    <label className="mb-2 block text-sm font-semibold text-gray-700">
                       Company Name{' '}
-                      <span className="text-gray-500">(Optional)</span>
+                      <span className="font-normal text-gray-400">
+                        (Optional)
+                      </span>
                     </label>
                     <div className="relative">
-                      <Building className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
+                      <Building className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400" />
                       <Input
                         type="text"
-                        placeholder="Enter your company name"
+                        placeholder="Enter company name"
                         value={formData.company}
                         onChange={(e) =>
                           handleInputChange('company', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="h-14 rounded-xl border-2 border-gray-200 bg-white pr-4 pl-12 text-base transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-4 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-12 rounded-xl border border-gray-200 bg-white pr-4 pl-10 text-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                       />
                     </div>
                   </div>
                 </div>
 
                 {/* Submit Button */}
-                <div className="pt-4">
+                <div className="mt-8">
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group relative h-16 w-full overflow-hidden rounded-xl border border-[#1B4332]/20 bg-gradient-to-r from-[#1B4332] via-[#1B4332] to-[#1B4332]/90 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.02] hover:from-[#1B4332]/90 hover:via-[#1B4332] hover:to-[#1B4332] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
+                    className="group relative h-14 w-full overflow-hidden rounded-xl bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.02] hover:from-[#1B4332]/90 hover:to-[#1B4332] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
                   >
-                    <div className="absolute inset-0 -translate-x-full -skew-x-12 transform bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 group-hover:translate-x-full"></div>
-                    <span className="relative flex items-center justify-center gap-3">
+                    <div className="absolute inset-0 -translate-x-full -skew-x-12 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 group-hover:translate-x-full"></div>
+                    <span className="relative flex items-center justify-center gap-2">
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="h-6 w-6 animate-spin" />
+                          <Loader2 className="h-5 w-5 animate-spin" />
                           Joining Waitlist...
                         </>
                       ) : (
                         <>
                           Join the Waitlist
-                          <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+                          <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                         </>
                       )}
                     </span>
                   </Button>
                 </div>
-              </form>
 
-              {/* Privacy Note */}
-              <div className="mt-8 border-t border-gray-200 pt-6">
-                <div className="flex items-start gap-3 text-sm leading-relaxed text-gray-600">
-                  <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#A7FFD9]/20">
-                    <div className="h-2 w-2 rounded-full bg-[#A7FFD9]"></div>
+                {/* Privacy Note */}
+                <div className="mt-6 rounded-xl bg-gray-50 p-4">
+                  <div className="flex items-start gap-3 text-xs leading-relaxed text-gray-600">
+                    <div className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#A7FFD9]/20">
+                      <div className="h-1.5 w-1.5 rounded-full bg-[#A7FFD9]"></div>
+                    </div>
+                    <p>
+                      By joining, you'll receive exclusive updates about Shuri
+                      Way's launch and early access opportunities. We respect
+                      your privacy and will never share your information.
+                    </p>
                   </div>
-                  <p>
-                    By joining, you'll receive exclusive updates about Shuri
-                    Way's launch and early access opportunities. We respect your
-                    privacy and will never share your information.
-                  </p>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
