@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { useState, useEffect, memo, useCallback } from 'react';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navItems = [
@@ -34,30 +34,35 @@ function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 right-0 left-0 z-50 transition-all duration-300 ease-out',
+        'fixed top-0 right-0 left-0 z-50 transition-all duration-500 ease-out',
         isScrolled
-          ? 'border-b border-gray-200/50 bg-white/95 shadow-sm backdrop-blur-xl'
+          ? 'border-b border-gray-200/30 bg-white/95 shadow-lg shadow-black/5 backdrop-blur-xl'
           : 'bg-white/10 backdrop-blur-md',
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-20">
-          {/* Clean Logo Section */}
           <div
-            className="group flex cursor-pointer items-center"
+            className="group flex cursor-pointer items-center transition-all duration-300 hover:scale-105"
             onClick={() => scrollToSection('hero')}
           >
             <div className="flex items-center">
-              <img
-                src="/logo.png"
-                alt="The Shuri Way Logo"
-                className="h-8 w-8 object-contain transition-transform duration-200 group-hover:scale-105 sm:h-9 sm:w-9 lg:h-10 lg:w-10"
-              />
+              <div className="relative">
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#A7FFD9]/20 to-[#DAB785]/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <img
+                  src="/logo.png"
+                  alt="The Shuri Way Logo"
+                  className="relative h-10 w-10 object-contain transition-all duration-300 sm:h-11 sm:w-11 lg:h-12 lg:w-12"
+                />
+              </div>
+
               <div className="ml-3">
                 <div
                   className={cn(
-                    'font-safari text-lg leading-tight font-bold tracking-tight transition-colors duration-200 sm:text-xl lg:text-2xl',
-                    isScrolled ? 'text-gray-900' : 'text-white',
+                    'text-xl leading-tight font-bold tracking-tight transition-all duration-300 sm:text-xl lg:text-2xl',
+                    isScrolled
+                      ? 'text-[#1B4332] group-hover:text-[#1B4332]/80'
+                      : 'text-white group-hover:text-white/90',
                   )}
                 >
                   The Shuri Way
@@ -66,81 +71,101 @@ function Header() {
             </div>
           </div>
 
-          {/* Clean Navigation */}
-          <nav className="hidden items-center space-x-1 lg:flex">
-            {navItems.map((item) => (
+          <nav className="hidden items-center space-x-2 lg:flex">
+            {navItems.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={cn(
-                  'relative rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200',
+                  'group relative rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-300',
                   isScrolled
-                    ? 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'text-gray-700 hover:bg-gray-50 hover:text-[#1B4332]'
                     : 'text-white/90 hover:bg-white/10 hover:text-white',
                 )}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                {item.label}
+                <span className="relative z-10">{item.label}</span>
+
+                <div
+                  className={cn(
+                    'absolute inset-0 rounded-xl opacity-0 transition-all duration-300 group-hover:opacity-100',
+                    isScrolled
+                      ? 'bg-gradient-to-r from-[#A7FFD9]/10 to-[#DAB785]/10'
+                      : 'bg-white/10',
+                  )}
+                />
               </button>
             ))}
           </nav>
 
-          {/* Simple CTA Button */}
           <div className="hidden items-center lg:flex">
             <Button
               onClick={() => scrollToSection('cta')}
               className={cn(
-                'rounded-lg px-5 py-2.5 text-sm font-semibold transition-all duration-200',
-                'bg-primary hover:bg-primary/90 text-white',
-                'shadow-md hover:scale-105 hover:shadow-lg',
+                'group relative overflow-hidden rounded-xl px-6 py-3 text-sm font-bold transition-all duration-300 hover:scale-105',
+                isScrolled
+                  ? 'bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90 text-white shadow-lg hover:shadow-xl hover:shadow-[#1B4332]/25'
+                  : 'border border-white/20 bg-white/15 text-white backdrop-blur-sm hover:bg-white/20',
               )}
             >
-              <span className="flex items-center gap-2">
+              <div className="absolute inset-0 -translate-x-full -skew-x-12 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 group-hover:translate-x-full"></div>
+
+              <span className="relative flex items-center gap-2">
                 Join Waitlist
-                <ChevronRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
             </Button>
           </div>
 
-          {/* Simple Mobile Menu Button */}
           <button
             className={cn(
-              'rounded-lg p-2 transition-colors duration-200 lg:hidden',
+              'relative rounded-xl p-2.5 transition-all duration-300 lg:hidden',
               isScrolled
-                ? 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                ? 'text-gray-700 hover:bg-gray-50 hover:text-[#1B4332]'
                 : 'text-white hover:bg-white/10',
             )}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            <div className="relative">
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </div>
           </button>
         </div>
 
-        {/* Clean Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="border-t border-gray-200/20 backdrop-blur-xl lg:hidden">
-            <div className="absolute inset-0 bg-white/95" />
-            <nav className="relative space-y-1 py-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full px-4 py-3 text-left font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900"
-                >
-                  <div className="flex items-center justify-between">
-                    <span>{item.label}</span>
-                    <ChevronRight className="h-4 w-4 opacity-50" />
-                  </div>
-                </button>
-              ))}
+          <div className="absolute top-full right-0 left-0 border-t border-gray-200/20 backdrop-blur-xl lg:hidden">
+            <div className="absolute inset-0 bg-white/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#A7FFD9]/5 to-[#DAB785]/5"></div>
 
-              <div className="px-4 pt-4">
+            <nav className="relative px-4 py-6">
+              <div className="mb-6 space-y-2">
+                {navItems.map((item, index) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="group w-full rounded-xl px-4 py-3 text-left font-semibold text-gray-700 transition-all duration-300 hover:bg-gray-50 hover:text-[#1B4332]"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="transition-colors duration-300">
+                        {item.label}
+                      </span>
+                      <ArrowRight className="h-4 w-4 opacity-50 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              <div className="border-t border-gray-200 pt-6">
                 <Button
                   onClick={() => scrollToSection('cta')}
-                  className="bg-primary hover:bg-primary/90 w-full rounded-lg py-3 font-semibold text-white shadow-md transition-all duration-200"
+                  className="group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-[#1B4332] to-[#1B4332]/90 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
                 >
-                  <span className="flex items-center justify-center gap-2">
+                  <div className="absolute inset-0 -translate-x-full -skew-x-12 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 group-hover:translate-x-full"></div>
+
+                  <span className="relative flex items-center justify-center gap-2">
                     Join Waitlist
-                    <ChevronRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                 </Button>
               </div>
