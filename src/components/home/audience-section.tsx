@@ -182,11 +182,11 @@ function AudienceSection() {
               const element = document.getElementById('cta');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group from-savanna-green to-savanna-green/90 hover:from-savanna-green/90 hover:to-savanna-green border-savanna-green/30 rounded-2xl border bg-gradient-to-r px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            className="group from-savanna-green to-savanna-green/90 hover:from-savanna-green/90 hover:to-savanna-green border-savanna-green/30 rounded-2xl border bg-gradient-to-r px-12 py-6 text-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
           >
             <span className="flex items-center gap-3">
               Join the Revolution
-              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </Button>
         </div>

@@ -50,16 +50,6 @@ function ProductSection() {
             See how Shuri Way connects the dots — from lodge calendars to client
             quotes.
           </p>
-
-          {/* Enhanced Video Demo Button */}
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-earth-gold/30 hover:border-earth-gold hover:bg-earth-gold/10 text-dusk-brown hover:text-earth-gold mb-12 rounded-2xl border-2 px-6 py-3 transition-all duration-300"
-          >
-            <PlayCircle className="mr-2" size={20} />
-            Watch Demo (Coming Soon)
-          </Button>
         </div>
 
         {/* Enhanced Feature Card: Meet Shuri AI */}
