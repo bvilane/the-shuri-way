@@ -26,9 +26,7 @@ export default $config({
       domain: {
         name: 'theshuriway.com',
         redirects: ['www.theshuriway.com'],
-        dns: sst.cloudflare.dns({
-          zone: 'de81739bb824f1752349d6e2acbf0cb6',
-        }),
+        dns: sst.cloudflare.dns(),
       },
     });
   },
