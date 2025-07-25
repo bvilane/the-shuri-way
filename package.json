@@ -6,6 +6,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite dev",
+    "format": "prettier --write .",
     "deploy": "sst deploy --stage prod"
   },
   "packageManager": "pnpm@10.13.1",
