@@ -74,10 +74,8 @@ function HeroSection() {
           <div className="mt-12 flex justify-center lg:mt-0 lg:justify-end">
             <div className="relative">
               <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#A7FFD9]/20 to-[#DAB785]/20 blur-xl"></div>
-
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-sm">
-                  <div className="relative aspect-[16/9] w-[500px] overflow-hidden rounded-xl bg-white md:w-[600px] lg:w-[520px] xl:w-[580px]">
+                  <div className="relative aspect-[16/9] w-[500px] overflow-hidden rounded-xl md:w-[600px] lg:w-[520px] xl:w-[580px]">
                     <div className="relative h-full w-full">
                       {heroImages.map((image, index) => (
                         <div
@@ -96,7 +94,6 @@ function HeroSection() {
                             alt={`Platform Demo ${index + 1}`}
                             className="h-full w-full object-cover"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
                         </div>
                       ))}
                     </div>
