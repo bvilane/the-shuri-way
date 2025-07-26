@@ -118,9 +118,15 @@ function Footer() {
                 <span>Built with</span>
                 <Heart size={16} style={{ color: '#daa520' }} />
                 <span>by</span>
-                <span className="font-semibold" style={{ color: '#daa520' }}>
+                <a
+                  href="https://shurimanagement.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold transition-colors duration-200"
+                  style={{ color: '#daa520' }}
+                >
                   Shuri Management Group
-                </span>
+                </a>
               </div>
 
               <div

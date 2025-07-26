@@ -84,20 +84,28 @@ function WaitlistSection() {
 
   if (isSubmitted) {
     return (
-      <section id="cta" className="bg-gray-50 py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="cta" className="relative overflow-hidden py-16 lg:py-20">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/form-bg.png"
+            alt="Background"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-white/85"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#A7FFD9]/10 to-[#DAB785]/10"></div>
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
-            <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-xl">
-              {/* Background Pattern */}
+            <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white/90 shadow-xl backdrop-blur-sm">
               <div className="absolute inset-0 bg-gradient-to-br from-[#A7FFD9]/5 via-white to-[#DAB785]/5"></div>
 
               <div className="relative p-8 text-center lg:p-12">
-                {/* Success Icon */}
                 <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-[#1B4332] to-[#1B4332]/80 shadow-lg">
                   <CheckCircle size={28} className="text-white" />
                 </div>
 
-                {/* Success Message */}
                 <h2 className="mb-4 text-2xl font-bold text-[#1B4332] lg:text-3xl">
                   You're in! Welcome to the revolution.
                 </h2>
@@ -111,7 +119,6 @@ function WaitlistSection() {
                   launch.
                 </p>
 
-                {/* Benefits */}
                 <div className="mx-auto max-w-md space-y-4">
                   <div className="flex items-center justify-center gap-3 rounded-xl bg-gray-50 p-4">
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#A7FFD9]/20">
@@ -139,28 +146,22 @@ function WaitlistSection() {
   }
 
   return (
-    <section id="cta" className="bg-gray-50 py-16 lg:py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="cta" className="relative overflow-hidden py-16 lg:py-20">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/form-bg.png"
+          alt="Background"
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          {/* Header */}
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl leading-tight font-bold text-[#1B4332] sm:text-4xl lg:text-5xl">
-              The future of safari runs on intelligence.
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600 md:text-xl">
-              Be the first to use Shuri AI — our integrated assistant that helps
-              travelers, operators, and lodges make smarter decisions, faster.
-            </p>
-          </div>
-
-          {/* Form Container */}
           <div className="relative">
-            {/* Enhanced Background */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#A7FFD9]/10 via-white/50 to-[#DAB785]/10 blur-3xl"></div>
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#A7FFD9]/20 via-white/30 to-[#DAB785]/20 blur-2xl"></div>
 
-            <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white/80 shadow-2xl backdrop-blur-sm">
-              {/* Form Header */}
-              <div className="border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white p-6 text-center lg:p-8">
+            <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/85 shadow-2xl backdrop-blur-md">
+              <div className="border-b border-gray-100 bg-gradient-to-r from-gray-50/80 to-white/80 p-6 text-center backdrop-blur-sm lg:p-8">
                 <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-[#A7FFD9] to-[#DAB785]">
                   <Mail className="h-6 w-6 text-white" />
                 </div>
@@ -173,9 +174,7 @@ function WaitlistSection() {
               </div>
 
               <form onSubmit={handleSubmit} className="p-6 lg:p-8">
-                {/* Form Fields Grid */}
                 <div className="grid gap-6 md:grid-cols-2">
-                  {/* Name Field */}
                   <div className="group">
                     <label className="mb-2 block text-sm font-semibold text-gray-700">
                       Full Name *
@@ -190,13 +189,12 @@ function WaitlistSection() {
                           handleInputChange('name', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="h-12 rounded-xl border border-gray-200 bg-white pr-4 pl-10 text-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-12 rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm backdrop-blur-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                         required
                       />
                     </div>
                   </div>
 
-                  {/* Email Field */}
                   <div className="group">
                     <label className="mb-2 block text-sm font-semibold text-gray-700">
                       Email Address *
@@ -211,13 +209,12 @@ function WaitlistSection() {
                           handleInputChange('email', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="h-12 rounded-xl border border-gray-200 bg-white pr-4 pl-10 text-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-12 rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm backdrop-blur-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                         required
                       />
                     </div>
                   </div>
 
-                  {/* Role Field */}
                   <div className="group">
                     <label className="mb-2 block text-sm font-semibold text-gray-700">
                       Your Role *
@@ -231,10 +228,10 @@ function WaitlistSection() {
                         disabled={isSubmitting}
                         required
                       >
-                        <SelectTrigger className="h-12 w-full rounded-xl border border-gray-200 bg-white pr-4 pl-10 text-sm transition-all duration-300 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50 data-[placeholder]:text-gray-400">
+                        <SelectTrigger className="h-12 w-full rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm backdrop-blur-sm transition-all duration-300 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50 data-[placeholder]:text-gray-400">
                           <SelectValue placeholder="Select your role" />
                         </SelectTrigger>
-                        <SelectContent className="rounded-xl border border-gray-200 bg-white shadow-xl">
+                        <SelectContent className="rounded-xl border border-gray-200 bg-white/95 shadow-xl backdrop-blur-sm">
                           <SelectItem
                             value="lodge"
                             className="rounded-lg text-sm hover:bg-[#1B4332]/5 focus:bg-[#1B4332]/10"
@@ -264,7 +261,6 @@ function WaitlistSection() {
                     </div>
                   </div>
 
-                  {/* Company Field */}
                   <div className="group">
                     <label className="mb-2 block text-sm font-semibold text-gray-700">
                       Company Name{' '}
@@ -282,13 +278,12 @@ function WaitlistSection() {
                           handleInputChange('company', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="h-12 rounded-xl border border-gray-200 bg-white pr-4 pl-10 text-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-12 rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm backdrop-blur-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                       />
                     </div>
                   </div>
                 </div>
 
-                {/* Submit Button */}
                 <div className="mt-8">
                   <Button
                     type="submit"
@@ -312,8 +307,7 @@ function WaitlistSection() {
                   </Button>
                 </div>
 
-                {/* Privacy Note */}
-                <div className="mt-6 rounded-xl bg-gray-50 p-4">
+                <div className="mt-6 rounded-xl bg-white/60 p-4 backdrop-blur-sm">
                   <div className="flex items-start gap-3 text-xs leading-relaxed text-gray-600">
                     <div className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#A7FFD9]/20">
                       <div className="h-1.5 w-1.5 rounded-full bg-[#A7FFD9]"></div>
