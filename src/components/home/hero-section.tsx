@@ -74,7 +74,7 @@ function HeroSection() {
           <div className="mt-12 flex justify-center lg:mt-0 lg:justify-end">
             <div className="relative">
               <div className="relative">
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-sm">
+                <div className="relative overflow-hidden rounded-2xl p-3">
                   <div className="relative aspect-[16/9] w-[500px] overflow-hidden rounded-xl md:w-[600px] lg:w-[520px] xl:w-[580px]">
                     <div className="relative h-full w-full">
                       {heroImages.map((image, index) => (

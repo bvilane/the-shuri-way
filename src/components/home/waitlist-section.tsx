@@ -189,7 +189,7 @@ function WaitlistSection() {
                           handleInputChange('name', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="h-12 rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm backdrop-blur-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-12 rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                         required
                       />
                     </div>
@@ -209,7 +209,7 @@ function WaitlistSection() {
                           handleInputChange('email', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="h-12 rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm backdrop-blur-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-12 rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                         required
                       />
                     </div>
@@ -278,7 +278,7 @@ function WaitlistSection() {
                           handleInputChange('company', e.target.value)
                         }
                         disabled={isSubmitting}
-                        className="h-12 rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm backdrop-blur-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-12 rounded-xl border border-gray-200 bg-white/90 pr-4 pl-10 text-sm transition-all duration-300 placeholder:text-gray-400 hover:border-[#A7FFD9]/60 focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/20 disabled:cursor-not-allowed disabled:opacity-50"
                       />
                     </div>
                   </div>
