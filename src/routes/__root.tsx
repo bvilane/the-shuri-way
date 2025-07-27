@@ -24,7 +24,17 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'The Shuri Way',
+        title: 'Plan, Book & Manage Safaris | Shuri Way',
+      },
+      {
+        name: 'description',
+        content:
+          'All-in-one safari software for lodges, operators, travelers, and service providers, powered by AI.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'safari booking platform, safari itinerary builder, safari lodge software, safari travel planning, safari operations software, booking software for lodges, safari tour operator tools, lodge booking software, how to plan a safari itinerary, manage safari lodge availability, automate safari lodge bookings, safari trip builder for travel agents, direct booking platform for lodges, plan your own safari trip',
       },
       {
         rel: 'preconnect',
