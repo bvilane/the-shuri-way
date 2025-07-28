@@ -8,7 +8,22 @@ export default defineConfig({
   server: { port: 3000 },
   plugins: [
     tsConfigPaths(),
-    tanstackStart({ customViteReactPlugin: true, target: 'aws-lambda' }),
+    tanstackStart({
+      customViteReactPlugin: true,
+      target: 'aws-lambda',
+      prerender: {
+        enabled: true,
+        concurrency: 20,
+        crawlLinks: false,
+        autoSubfolderIndex: true,
+      },
+      pages: [
+        {
+          path: '/',
+          prerender: { enabled: true, outputPath: '/index.html' },
+        },
+      ],
+    }),
     viteReact(),
     tailwindcss(),
   ],
