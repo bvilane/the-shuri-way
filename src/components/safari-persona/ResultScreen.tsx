@@ -55,23 +55,34 @@ const ResultScreen = ({ personality, tempo, onRestart }: ResultScreenProps) => {
   };
 
   useEffect(() => {
-    // Update parent wrapper background color to match tempo
-    const wrapper = document.querySelector('.safari-persona-app') as HTMLElement;
-    if (wrapper) {
-      wrapper.style.backgroundColor = theme.base;
-    }
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      // Update parent wrapper background color to match tempo
+      const wrapper = document.querySelector('.safari-persona-app') as HTMLElement;
+      if (wrapper) {
+        wrapper.style.backgroundColor = theme.base;
+      }
 
-    // Update meta theme-color for mobile browser chrome (Safari top/bottom bars)
-    let metaTheme = document.querySelector('meta[name="theme-color"]');
-    if (!metaTheme) {
-      metaTheme = document.createElement('meta');
-      metaTheme.setAttribute('name', 'theme-color');
-      document.head.appendChild(metaTheme);
-    }
-    metaTheme.setAttribute('content', theme.base);
+      // Update meta theme-color for mobile browser chrome (Safari top/bottom bars)
+      let metaTheme = document.querySelector('meta[name="theme-color"]');
+      if (!metaTheme) {
+        metaTheme = document.createElement('meta');
+        metaTheme.setAttribute('name', 'theme-color');
+        document.head.appendChild(metaTheme);
+      }
+      metaTheme.setAttribute('content', theme.base);
+
+      // Also update apple-mobile-web-app-status-bar-style
+      let appleBarStyle = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+      if (appleBarStyle) {
+        appleBarStyle.setAttribute('content', 'black-translucent');
+      }
+    }, 50);
 
     return () => {
+      clearTimeout(timer);
       // Reset to default green when leaving result screen
+      const wrapper = document.querySelector('.safari-persona-app') as HTMLElement;
       if (wrapper) {
         wrapper.style.backgroundColor = '#1C2B1E';
       }
