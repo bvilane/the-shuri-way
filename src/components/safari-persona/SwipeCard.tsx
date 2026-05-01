@@ -72,12 +72,12 @@ const SwipeCard = ({ card, imageUrl, counter, onSwipe, isTop }: SwipeCardProps) 
   return (
     <div ref={containerRef} className="absolute inset-x-4 top-[4vh] bottom-[12vh]">
       <motion.div
-        style={{ x, rotate, opacity }}
+        style={{ x, rotate, opacity, touchAction: 'pan-x' }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.8}
         onDragEnd={handleDragEnd}
-        className={`relative w-full h-full rounded-2xl overflow-hidden cursor-grab active:cursor-grabbing touch-none ${currentGlow}`}
+        className={`relative w-full h-full rounded-2xl overflow-hidden cursor-grab active:cursor-grabbing ${currentGlow}`}
       >
         {/* Background image */}
         {!imageLoaded && (
