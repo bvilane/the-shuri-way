@@ -55,14 +55,13 @@ const ResultScreen = ({ personality, tempo, onRestart }: ResultScreenProps) => {
   };
 
   useEffect(() => {
-    // Update parent wrapper background color
+    // Update parent wrapper background color to match tempo
     const wrapper = document.querySelector('.safari-persona-app') as HTMLElement;
     if (wrapper) {
-      wrapper.style.setProperty('--theme-bg-color', theme.base);
-      wrapper.setAttribute('data-theme-color', 'true');
+      wrapper.style.backgroundColor = theme.base;
     }
 
-    // Update meta theme-color for mobile browser chrome
+    // Update meta theme-color for mobile browser chrome (Safari top/bottom bars)
     let metaTheme = document.querySelector('meta[name="theme-color"]');
     if (!metaTheme) {
       metaTheme = document.createElement('meta');
@@ -72,12 +71,12 @@ const ResultScreen = ({ personality, tempo, onRestart }: ResultScreenProps) => {
     metaTheme.setAttribute('content', theme.base);
 
     return () => {
+      // Reset to default green when leaving result screen
       if (wrapper) {
-        wrapper.style.removeProperty('--theme-bg-color');
-        wrapper.removeAttribute('data-theme-color');
+        wrapper.style.backgroundColor = '#1C2B1E';
       }
       const meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', '#1C2B1E'); // Reset to default green
+      if (meta) meta.setAttribute('content', '#1C2B1E');
     };
   }, [theme.base]);
 
