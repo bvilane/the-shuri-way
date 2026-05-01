@@ -84,7 +84,7 @@ const ResultScreen = ({ personality, tempo, onRestart }: ResultScreenProps) => {
   return (
     <div
       ref={resultRef}
-      className="min-h-[100dvh] px-6 pb-16 pt-[15vh]"
+      className="result-screen-scrollable min-h-[100dvh] px-6 pb-16 pt-[15vh]"
       style={{ backgroundColor: theme.base }}
     >
       <div className="max-w-md mx-auto">

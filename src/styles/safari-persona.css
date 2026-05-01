@@ -45,7 +45,7 @@
   --tempo-anchored-accent: 11 47% 53%;
 }
 
-/* Base styling */
+/* Base styling - NO scrolling by default (only ResultScreen scrolls) */
 .safari-persona-app {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
@@ -60,16 +60,21 @@
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden; /* No scroll by default - prevents swipe conflicts */
   overscroll-behavior: none;
-  /* Prevent pull-to-refresh on mobile */
-  -webkit-overflow-scrolling: touch;
 }
 
-/* Set theme color meta tag dynamically matches result screen backgrounds */
+/* Match browser chrome color to tempo background */
 .safari-persona-app[data-theme-color] {
   background-color: var(--theme-bg-color, hsl(var(--background)));
+}
+
+/* Only ResultScreen scrolls */
+.safari-persona-app .result-screen-scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  height: 100dvh;
 }
 
 /* Fix: Ensure bg-white buttons have dark green text (per design spec 7b) */
