@@ -1,0 +1,196 @@
+/* Safari Persona — Design System (Scoped to .safari-persona-app) */
+
+.safari-persona-app {
+  /* Core semantic tokens - Deep forest green theme */
+  --background: 144 22% 14%;
+  --foreground: 36 33% 91%;
+
+  --card: 144 22% 14%;
+  --card-foreground: 36 33% 91%;
+
+  --popover: 144 22% 14%;
+  --popover-foreground: 36 33% 91%;
+
+  --primary: 36 33% 91%;
+  --primary-foreground: 144 22% 14%;
+
+  --secondary: 30 17% 72%;
+  --secondary-foreground: 144 22% 14%;
+
+  --muted: 144 15% 20%;
+  --muted-foreground: 30 17% 72%;
+
+  --accent: 28 62% 53%;
+  --accent-foreground: 36 33% 91%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 144 15% 25%;
+  --input: 144 15% 25%;
+  --ring: 36 33% 91%;
+
+  --radius: 0.5rem;
+
+  /* Tempo theme colors (per-result palettes) */
+  --tempo-still-base: 220 30% 15%;
+  --tempo-still-accent: 207 14% 60%;
+  --tempo-slow-base: 100 26% 12%;
+  --tempo-slow-accent: 105 18% 49%;
+  --tempo-rhythmic-base: 144 22% 14%;
+  --tempo-rhythmic-accent: 28 62% 53%;
+  --tempo-kinetic-base: 27 50% 10%;
+  --tempo-kinetic-accent: 42 62% 51%;
+  --tempo-anchored-base: 20 35% 10%;
+  --tempo-anchored-accent: 11 47% 53%;
+}
+
+/* Base styling */
+.safari-persona-app {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+/* Fix: Ensure bg-white buttons have dark green text (per design spec 7b) */
+.safari-persona-app button.bg-white,
+.safari-persona-app .bg-white,
+.safari-persona-app [data-slot="button"].bg-white,
+.safari-persona-app button[class*="bg-white"] {
+  background-color: #ffffff !important;
+  color: #1c2b1e !important; /* Forest green text */
+}
+
+.safari-persona-app button.bg-white:hover,
+.safari-persona-app [data-slot="button"].bg-white:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #1c2b1e !important;
+}
+
+/* Extra specificity: target the exact element structure */
+.safari-persona-app button[class*="w-full"][class*="bg-white"],
+.safari-persona-app button[class*="rounded-full"][class*="bg-white"] {
+  background-color: #ffffff !important;
+  color: #1c2b1e !important;
+}
+
+/* Fix: Ensure bg-primary buttons render correctly (Begin button on IntroScreen) */
+.safari-persona-app button.bg-primary,
+.safari-persona-app [data-slot="button"].bg-primary,
+.safari-persona-app button[class*="bg-primary"] {
+  background-color: #F0EBE0 !important; /* Cream background */
+  color: #1c2b1e !important; /* Forest green text */
+}
+
+.safari-persona-app button.bg-primary:hover,
+.safari-persona-app [data-slot="button"].bg-primary:hover {
+  background-color: rgba(240, 235, 224, 0.9) !important;
+  color: #1c2b1e !important;
+}
+
+/* Fix: Ensure bg-accent buttons render correctly (Share Your Result button) */
+.safari-persona-app button.bg-accent,
+.safari-persona-app [data-slot="button"].bg-accent,
+.safari-persona-app button[class*="bg-accent"] {
+  background-color: #D17A36 !important; /* Burnt orange background */
+  color: #F0EBE0 !important; /* Cream text */
+}
+
+.safari-persona-app button.bg-accent:hover,
+.safari-persona-app [data-slot="button"].bg-accent:hover {
+  background-color: rgba(209, 122, 54, 0.9) !important;
+  color: #F0EBE0 !important;
+}
+
+/* Align Restart button with Practice counter - both at same vertical level */
+.safari-persona-app button[class*="top-6"][class*="left-6"] {
+  top: 2.5rem !important; /* Match the counter position */
+}
+
+/* Fix: Drawer (ShareSheet) background and styling */
+.safari-persona-app [data-vaul-drawer] {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.safari-persona-app [data-vaul-drawer-title] {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Fix: Input fields in ShareSheet */
+.safari-persona-app input[type="email"],
+.safari-persona-app input {
+  background-color: hsl(var(--muted) / 0.2) !important;
+  border-color: hsl(var(--secondary) / 0.2) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.safari-persona-app input::placeholder {
+  color: hsl(var(--secondary) / 0.5) !important;
+}
+
+/* Fix: Checkbox in ShareSheet */
+.safari-persona-app [role="checkbox"] {
+  border-color: hsl(var(--secondary) / 0.4) !important;
+}
+
+.safari-persona-app [role="checkbox"][data-state="checked"] {
+  background-color: hsl(var(--accent)) !important;
+  border-color: hsl(var(--accent)) !important;
+}
+
+/* Fix: Labels in ShareSheet */
+.safari-persona-app label {
+  color: hsl(var(--secondary)) !important;
+}
+
+/* Fix: Outline variant buttons (Feed 1:1, Story 9:16) */
+.safari-persona-app button[class*="border-secondary"],
+.safari-persona-app [data-slot="button"][class*="border-secondary"] {
+  background-color: transparent !important;
+  border-color: hsl(var(--secondary) / 0.3) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.safari-persona-app button[class*="border-secondary"]:hover,
+.safari-persona-app [data-slot="button"][class*="border-secondary"]:hover {
+  background-color: hsl(var(--muted) / 0.2) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Reset borders within Safari Persona */
+.safari-persona-app * {
+  border-color: hsl(var(--border));
+}
+
+/* Typography - Headings use Fraunces serif */
+.safari-persona-app h1,
+.safari-persona-app h2,
+.safari-persona-app h3,
+.safari-persona-app h4,
+.safari-persona-app h5,
+.safari-persona-app h6 {
+  font-family: 'Fraunces', serif;
+}
+
+/* Font utility classes */
+.safari-persona-app .font-display {
+  font-family: 'Fraunces', serif;
+}
+
+.safari-persona-app .font-body {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Swipe feedback glows - used by SwipeCard component */
+.safari-persona-app .swipe-glow-right {
+  box-shadow: inset -40px 0 60px -20px hsl(var(--accent) / 0.4);
+}
+
+.safari-persona-app .swipe-glow-left {
+  box-shadow: inset 40px 0 60px -20px hsl(210 10% 50% / 0.3);
+}

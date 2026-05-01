@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SafariPersonaIndexRouteImport } from './routes/safari-persona/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SafariPersonaIndexRoute = SafariPersonaIndexRouteImport.update({
+  id: '/safari-persona/',
+  path: '/safari-persona/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/safari-persona': typeof SafariPersonaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/safari-persona': typeof SafariPersonaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/safari-persona/': typeof SafariPersonaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/safari-persona'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/safari-persona'
+  id: '__root__' | '/' | '/safari-persona/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SafariPersonaIndexRoute: typeof SafariPersonaIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/safari-persona/': {
+      id: '/safari-persona/'
+      path: '/safari-persona'
+      fullPath: '/safari-persona'
+      preLoaderRoute: typeof SafariPersonaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SafariPersonaIndexRoute: SafariPersonaIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

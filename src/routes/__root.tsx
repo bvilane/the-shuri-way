@@ -1,4 +1,5 @@
 import globalsCss from '@/styles/globals.css?url';
+import safariPersonaCss from '@/styles/safari-persona.css?url';
 
 import { Toaster } from '@/components/ui/sonner';
 
@@ -47,7 +48,7 @@ export const Route = createRootRoute({
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap',
       },
       {
         rel: 'icon',
@@ -57,6 +58,7 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: 'stylesheet', href: globalsCss },
+      { rel: 'stylesheet', href: safariPersonaCss },
       { rel: 'icon', href: '/logo.png' },
     ],
   }),
