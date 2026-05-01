@@ -253,7 +253,7 @@ const ShareSheet = ({ open, onClose, result, theme, moodboardImages }: ShareShee
     const footerY = isStory ? height - 120 : height - 60;
     ctx.fillText('The Shuri Collection', width / 2, footerY);
 
-      canvas.toBlob((blob) => {
+      canvas.toBlob(async (blob) => {
         if (!blob) {
           console.error('Failed to generate image blob');
           setGenerating(false);
@@ -262,7 +262,34 @@ const ShareSheet = ({ open, onClose, result, theme, moodboardImages }: ShareShee
 
         console.log('Image generated successfully, size:', blob.size);
 
-        // Always download - navigator.share() loses user gesture context after async operations
+        const file = new File([blob], `safari-result-${format}.png`, { type: 'image/png' });
+
+        // Try native share API (works on mobile)
+        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+          try {
+            await navigator.share({
+              files: [file],
+              title: result.title,
+              text: `I'm a ${result.title}! Discover your safari style.`,
+            });
+            console.log('Shared via native share');
+            setGenerating(false);
+            handleClose();
+            return;
+          } catch (err: any) {
+            // User cancelled or share failed
+            if (err.name !== 'AbortError') {
+              console.log('Share failed, falling back to download:', err);
+            } else {
+              // User cancelled
+              setGenerating(false);
+              handleClose();
+              return;
+            }
+          }
+        }
+
+        // Fallback: Direct download for desktop
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
