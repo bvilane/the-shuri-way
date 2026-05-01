@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import IntroScreen from '@/components/safari-persona/IntroScreen';
 import ExplainerScreen from '@/components/safari-persona/ExplainerScreen';
@@ -16,11 +16,6 @@ type Screen = 'intro' | 'explainer' | 'cards' | 'calculating' | 'result';
 function SafariPersona() {
   const [screen, setScreen] = useState<Screen>('intro');
   const [result, setResult] = useState<{ personality: string; tempo: string } | null>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleCardComplete = useCallback((r: { personality: string; tempo: string }) => {
     setResult(r);
@@ -35,12 +30,6 @@ function SafariPersona() {
     setResult(null);
     setScreen('intro');
   }, []);
-
-  if (!mounted) {
-    return (
-      <div className="safari-persona-app fixed inset-0 w-full h-full min-h-screen overflow-x-hidden bg-background" />
-    );
-  }
 
   return (
     <div className="safari-persona-app fixed inset-0 w-full h-full min-h-screen overflow-x-hidden">
