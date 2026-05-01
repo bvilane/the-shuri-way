@@ -263,15 +263,25 @@ const ShareSheet = ({ open, onClose, result, theme, moodboardImages }: ShareShee
         console.log('Image generated successfully, size:', blob.size);
 
         const file = new File([blob], `safari-result-${format}.png`, { type: 'image/png' });
+        const shareText = `I'm a ${result.title}! Discover your safari style: https://theshuriway.com/safari-persona`;
 
         // Try native share API (works on mobile)
-        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+        if (navigator.share) {
           try {
-            await navigator.share({
-              files: [file],
-              title: result.title,
-              text: `I'm a ${result.title}! Discover your safari style.`,
-            });
+            // iOS Safari has issues with files in share, so try files first, then fallback
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+              await navigator.share({
+                files: [file],
+                title: result.title,
+                text: shareText,
+              });
+            } else {
+              // Fallback: share without files (iOS often blocks file sharing)
+              await navigator.share({
+                title: result.title,
+                text: shareText,
+              });
+            }
             console.log('Shared via native share');
             setGenerating(false);
             handleClose();
