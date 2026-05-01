@@ -22,6 +22,9 @@ export default $config({
         SMTP_USERNAME: process.env.SMTP_USERNAME,
         SMTP_PASSWORD: process.env.SMTP_PASSWORD,
         RECEIPENT_EMAIL: process.env.RECEIPENT_EMAIL,
+        VITE_SUPABASE_URL: process.env.VITE_SUPABASE_URL,
+        VITE_SUPABASE_PUBLISHABLE_KEY: process.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+        VITE_SUPABASE_PROJECT_ID: process.env.VITE_SUPABASE_PROJECT_ID,
       },
       domain: {
         name: 'theshuriway.com',
