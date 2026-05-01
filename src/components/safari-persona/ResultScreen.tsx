@@ -54,6 +54,33 @@ const ResultScreen = ({ personality, tempo, onRestart }: ResultScreenProps) => {
     });
   };
 
+  useEffect(() => {
+    // Update parent wrapper background color
+    const wrapper = document.querySelector('.safari-persona-app') as HTMLElement;
+    if (wrapper) {
+      wrapper.style.setProperty('--theme-bg-color', theme.base);
+      wrapper.setAttribute('data-theme-color', 'true');
+    }
+
+    // Update meta theme-color for mobile browser chrome
+    let metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (!metaTheme) {
+      metaTheme = document.createElement('meta');
+      metaTheme.setAttribute('name', 'theme-color');
+      document.head.appendChild(metaTheme);
+    }
+    metaTheme.setAttribute('content', theme.base);
+
+    return () => {
+      if (wrapper) {
+        wrapper.style.removeProperty('--theme-bg-color');
+        wrapper.removeAttribute('data-theme-color');
+      }
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', '#1C2B1E'); // Reset to default green
+    };
+  }, [theme.base]);
+
   return (
     <div
       ref={resultRef}

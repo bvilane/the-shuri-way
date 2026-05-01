@@ -52,8 +52,6 @@
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior: none;
-  overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -62,16 +60,16 @@
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  /* Prevent pull-to-refresh and bounce scrolling on mobile */
-  touch-action: pan-y;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  /* Prevent pull-to-refresh on mobile */
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Prevent body scroll when Safari Persona is active */
-body:has(.safari-persona-app) {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  height: 100%;
+/* Set theme color meta tag dynamically matches result screen backgrounds */
+.safari-persona-app[data-theme-color] {
+  background-color: var(--theme-bg-color, hsl(var(--background)));
 }
 
 /* Fix: Ensure bg-white buttons have dark green text (per design spec 7b) */
