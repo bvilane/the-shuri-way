@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { results, tempoThemes, type TempoKey } from '@/data/safari-persona/results';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -179,13 +179,19 @@ const ResultScreen = ({ personality, tempo, onRestart }: ResultScreenProps) => {
               {result.paragraph}
             </p>
 
-            <div className="space-y-5 mb-16">
+            <div className="space-y-5 mb-8">
               <Button
                 onClick={() => setShareOpen(true)}
                 className="w-full font-body text-sm tracking-wider uppercase rounded-full py-6 bg-accent text-accent-foreground hover:bg-accent/90"
               >
                 Share Your Result
               </Button>
+
+              <p className="font-body text-sm text-center text-secondary/80 leading-relaxed">
+                Don't forget to follow us and tag{' '}
+                <span className="text-foreground">@theshuriway</span>
+              </p>
+
               <button
                 onClick={onRestart}
                 className="flex items-center justify-center gap-2 w-full font-body text-xs text-secondary/60 hover:text-secondary transition-colors"
@@ -195,7 +201,38 @@ const ResultScreen = ({ personality, tempo, onRestart }: ResultScreenProps) => {
               </button>
             </div>
 
-            <p className="font-body text-xs text-secondary/40 text-center mt-16">
+            {/* Social Links */}
+            <div className="flex items-center justify-center gap-6 mb-6">
+              <a
+                href="https://www.instagram.com/theshuriway"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary/60 hover:text-foreground transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/people/The-Shuri-Way/61589340112104/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary/60 hover:text-foreground transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/the-shuri-way"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary/60 hover:text-foreground transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+
+            <p className="font-body text-xs text-secondary/40 text-center">
               The Shuri Collection
             </p>
           </motion.div>
