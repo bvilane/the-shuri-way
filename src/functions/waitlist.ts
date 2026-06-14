@@ -60,7 +60,9 @@ export const submitWaitlistForm = createServerFn({ method: 'POST' })
       await sheet.addRow(rowData);
 
       const mailer = nodemailer.createTransport({
-        service: 'gmail',
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        secure: Number(process.env.SMTP_PORT) === 465,
         auth: {
           user: process.env.SMTP_USERNAME,
           pass: process.env.SMTP_PASSWORD,
@@ -69,8 +71,9 @@ export const submitWaitlistForm = createServerFn({ method: 'POST' })
 
       try {
         await mailer.sendMail({
-          from: process.env.SMTP_USERNAME,
+          from: `"${process.env.SMTP_NAME}" <${process.env.SMTP_MAIL}>`,
           to: process.env.RECEIPENT_EMAIL,
+          replyTo: process.env.SMTP_REPLY_TO,
           subject: 'New Waitlist Signup - The Shuri Way',
           html: `
               <h2>New Waitlist Signup</h2>

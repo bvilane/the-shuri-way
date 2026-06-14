@@ -15,12 +15,12 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 10
+          version: 10.13.1
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '22'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -38,8 +38,11 @@ jobs:
           echo "GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}" >> $GITHUB_ENV
           echo "GOOGLE_PRIVATE_KEY=${{ secrets.GOOGLE_PRIVATE_KEY }}" >> $GITHUB_ENV
           echo "GOOGLE_SHEET_ID=${{ vars.GOOGLE_SHEET_ID }}" >> $GITHUB_ENV
-          echo "SMTP_SERVER=${{ vars.SMTP_SERVER }}" >> $GITHUB_ENV
-          echo "SMTP_PORT=${{ vars.SMTP_PORT }}" >> $GITHUB_ENV
+          echo "SMTP_NAME=${{ secrets.SMTP_NAME }}" >> $GITHUB_ENV
+          echo "SMTP_MAIL=${{ secrets.SMTP_MAIL }}" >> $GITHUB_ENV
+          echo "SMTP_REPLY_TO=${{ secrets.SMTP_REPLY_TO }}" >> $GITHUB_ENV
+          echo "SMTP_HOST=${{ secrets.SMTP_HOST }}" >> $GITHUB_ENV
+          echo "SMTP_PORT=${{ secrets.SMTP_PORT }}" >> $GITHUB_ENV
           echo "SMTP_USERNAME=${{ secrets.SMTP_USERNAME }}" >> $GITHUB_ENV
           echo "SMTP_PASSWORD=${{ secrets.SMTP_PASSWORD }}" >> $GITHUB_ENV
           echo "RECEIPENT_EMAIL=${{ vars.RECEIPENT_EMAIL }}" >> $GITHUB_ENV
