@@ -37,7 +37,7 @@ export const Route = createRootRoute({
         content: 'black-translucent',
       },
       {
-        title: 'Find And Book Your Perfect Safari & Experiences The Shuri Way',
+        title: 'Find And Book Your Perfect Safari - The Shuri Way',
       },
       {
         name: 'description',
