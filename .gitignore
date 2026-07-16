@@ -37,3 +37,4 @@ lerna-debug.log*
 
 # sst
 .sst
+supabase/.temp/

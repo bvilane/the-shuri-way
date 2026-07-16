@@ -10,7 +10,7 @@ export default defineConfig({
     tsConfigPaths(),
     tanstackStart({
       customViteReactPlugin: true,
-      target: 'aws-lambda',
+      target: 'vercel',
       prerender: {
         enabled: true,
         concurrency: 20,

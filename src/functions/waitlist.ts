@@ -1,7 +1,6 @@
-import nodemailer from 'nodemailer';
-import { JWT } from 'google-auth-library';
+import { Resend } from 'resend';
 import { createServerFn } from '@tanstack/react-start';
-import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { createClient } from '@supabase/supabase-js';
 
 export interface WaitlistFormData {
   name: string;
@@ -25,55 +24,31 @@ export const submitWaitlistForm = createServerFn({ method: 'POST' })
         throw new Error('Invalid email format');
       }
 
-      const serviceAccountAuth = new JWT({
-        email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        key: process.env.GOOGLE_PRIVATE_KEY?.split(String.raw`\n`).join('\n'),
-        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-      });
-
-      const doc = new GoogleSpreadsheet(
-        process.env.GOOGLE_SHEET_ID,
-        serviceAccountAuth,
+      const supabase = createClient(
+        process.env.SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!,
       );
 
-      await doc.loadInfo();
+      const { error: dbError } = await supabase
+        .from('waitlist_submissions')
+        .insert({
+          name: data.name,
+          email: data.email,
+          role: data.role,
+          company: data.company || null,
+        });
 
-      const sheet = doc.sheetsByIndex[0];
+      if (dbError) {
+        throw new Error(`Database error: ${dbError.message}`);
+      }
 
-      const rowData = {
-        name: data.name,
-        email: data.email,
-        role: data.role,
-        company: data.company ?? '',
-        timestamp: new Date().toLocaleString('en-US', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-          timeZone: 'Africa/Nairobi',
-        }),
-      };
-
-      await sheet.addRow(rowData);
-
-      const mailer = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT),
-        secure: Number(process.env.SMTP_PORT) === 465,
-        auth: {
-          user: process.env.SMTP_USERNAME,
-          pass: process.env.SMTP_PASSWORD,
-        },
-      });
+      const resend = new Resend(process.env.RESEND_API_KEY);
 
       try {
-        await mailer.sendMail({
-          from: `"${process.env.SMTP_NAME}" <${process.env.SMTP_MAIL}>`,
-          to: process.env.RECEIPENT_EMAIL,
-          replyTo: process.env.SMTP_REPLY_TO,
+        await resend.emails.send({
+          from: `${process.env.RESEND_FROM_NAME} <${process.env.RESEND_FROM_EMAIL}>`,
+          to: process.env.RECEIPENT_EMAIL.split(',').map(e => e.trim()),
+          replyTo: process.env.RESEND_REPLY_TO,
           subject: 'New Waitlist Signup - The Shuri Way',
           html: `
               <h2>New Waitlist Signup</h2>
