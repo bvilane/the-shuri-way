@@ -37,7 +37,7 @@ export const Route = createRootRoute({
         content: 'black-translucent',
       },
       {
-        title: 'Plan, Book & Manage Safaris | Shuri Way',
+        title: 'Find And Book Your Perfect Safari & Experiences The Shuri Way',
       },
       {
         name: 'description',
@@ -64,14 +64,14 @@ export const Route = createRootRoute({
       },
       {
         rel: 'icon',
-        type: 'image/png',
-        href: '/logo.png',
+        type: 'image/x-icon',
+        href: '/favicon.ico',
       },
     ],
     links: [
       { rel: 'stylesheet', href: globalsCss },
       { rel: 'stylesheet', href: safariPersonaCss },
-      { rel: 'icon', href: '/logo.png' },
+      { rel: 'icon', href: '/favicon.ico' },
     ],
   }),
   component: RootComponent,
