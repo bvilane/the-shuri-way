@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/docs/terms-and-conditions",
+      "destination": "/docs-terms.html"
+    }
+  ]
+}
