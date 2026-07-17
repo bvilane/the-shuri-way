@@ -22,6 +22,14 @@ export default defineConfig({
           path: '/',
           prerender: { enabled: true, outputPath: '/index.html' },
         },
+        {
+          path: '/terms',
+          prerender: { enabled: true, outputPath: '/terms/index.html' },
+        },
+        {
+          path: '/refund-policy',
+          prerender: { enabled: true, outputPath: '/refund-policy/index.html' },
+        },
       ],
     }),
     viteReact(),
