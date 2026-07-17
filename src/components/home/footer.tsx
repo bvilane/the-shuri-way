@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { Instagram, Mail, MapPin, Heart } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -99,6 +100,29 @@ function Footer() {
                   hello@theshuriway.com
                 </span>
               </a>
+            </div>
+
+            {/* Legal Links */}
+            <div className="mb-8 flex items-center justify-center gap-6">
+              <Link
+                to="/terms"
+                className="text-sm font-medium transition-colors duration-200"
+                style={{ color: '#d8c3a5' }}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = 'white')}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#d8c3a5')}
+              >
+                Terms &amp; Conditions
+              </Link>
+              <span style={{ color: '#6a7f49' }}>|</span>
+              <Link
+                to="/refund-policy"
+                className="text-sm font-medium transition-colors duration-200"
+                style={{ color: '#d8c3a5' }}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = 'white')}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#d8c3a5')}
+              >
+                Cancellation &amp; Refund Policy
+              </Link>
             </div>
 
             <div className="mb-6">
